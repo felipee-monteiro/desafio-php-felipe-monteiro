@@ -49,5 +49,6 @@ export const PT_BR_LABELS = {
     "and": "e",
     "with": "com",
     "the_female_plural": "as",
-    "privacy_policy": "Políticas de privacidade"
+    "privacy_policy": "Políticas de privacidade",
+    "reset_password": getPTBRI18NValueByKey("Reset Password")
 };
