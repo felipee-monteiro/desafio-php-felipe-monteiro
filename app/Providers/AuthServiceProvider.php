@@ -11,7 +11,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('isColaborador', fn ($user) => $user->role === 'colaborador');
-        Gate::define('isTecnico', fn ($user) => $user->role === 'tecnico');
+        Gate::define('isColaborador', fn ($user) => $user->isColaborador());
+        Gate::define('isTecnico', fn ($user) => $user->isTecnico());
     }
 }
