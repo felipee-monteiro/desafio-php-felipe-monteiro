@@ -91,7 +91,7 @@ docker compose up -d postgres nginx
     php artisan migrate --seed
     ```
 
-    > Esse comando é responsável por popular seu banco de dados com alguns dados iniciais.
+    > Esse comando é responsável por criar a estrutuura e popular seu banco de dados com alguns dados iniciais.
 
 -   Gere a APP Key do Laravel:
     ```
