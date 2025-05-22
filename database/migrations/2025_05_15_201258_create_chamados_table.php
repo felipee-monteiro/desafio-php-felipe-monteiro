@@ -11,12 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
+       Schema::create('categoria_chamados', function (Blueprint $table) {
+           $table->id();
+           $table->string('name');
+           $table->timestamps();
+       });
+
         Schema::create('chamados', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('titulo');
             $table->text('descricao');
-            $table->string('categoria');
+            $table->foreignId('categoria_chamado_id')->constrained();
             $table->enum('prioridade', ['Baixa', 'Média', 'Alta']);
             $table->enum('status', ['Aberto', 'Em atendimento', 'Resolvido', 'Fechado'])->default('Aberto');
             $table->string('anexo')->nullable();
@@ -30,5 +36,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('chamados');
+        Schema::dropIfExists('categoria_chamados');
     }
 };

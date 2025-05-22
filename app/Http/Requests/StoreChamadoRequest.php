@@ -24,7 +24,7 @@ class StoreChamadoRequest extends FormRequest
         return [
             'titulo' => 'required|string|max:255',
             'descricao' => 'required',
-            'categoria' => 'required|string',
+            'categoria_chamado_id' => 'required|exists:categoria_chamados,id',
             'prioridade' => 'required|in:Baixa,Média,Alta',
             'anexo' => 'nullable|file|max:2048',
         ];

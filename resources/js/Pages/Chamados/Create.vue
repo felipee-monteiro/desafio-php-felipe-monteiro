@@ -36,14 +36,20 @@
                         >Categoria</label
                     >
                     <select
-                        v-model="form.categoria"
+                        v-model="form.categoria_chamado_id"
                         class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
-                        <option>TI</option>
-                        <option>Manutenção</option>
-                        <option>Suporte RH</option>
+                        <option
+                            v-for="categoria_chamado in categoriasChamado"
+                            :value="categoria_chamado.id"
+                        >
+                            {{ categoria_chamado.name }}
+                        </option>
                     </select>
-                    <InputError class="mt-2" :message="form.errors.categoria" />
+                    <InputError
+                        class="mt-2"
+                        :message="form.errors.categoria_chamado_id"
+                    />
                 </div>
 
                 <div>
@@ -92,10 +98,12 @@
 import InputError from "@/Components/InputError.vue";
 import { useForm } from "@inertiajs/vue3";
 
+defineProps({ categoriasChamado: Array });
+
 const form = useForm({
     titulo: "",
     descricao: "",
-    categoria: "TI",
+    categoria_chamado_id: 1,
     prioridade: "Média",
     anexo: null,
 });

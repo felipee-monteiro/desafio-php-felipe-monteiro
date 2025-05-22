@@ -4,23 +4,27 @@ namespace App\Http\Controllers\Tecnico;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AlterarStatusChamadoTecnicoRequest;
+use App\Http\Requests\IndexChamadoTecnicoRequest;
 use App\Http\Requests\ResponderChamadoTecnicoRequest;
 use App\Models\Chamado;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class ChamadoTecnicoController extends Controller
 {
-    public function index(Request $request)
+    public function index(IndexChamadoTecnicoRequest $request)
     {
         $query = Chamado::query();
 
-        if ($request->has('status')) {
-            $query->where('status', $request->status);
-        }
+        $data = $request->validated();
 
-        if ($request->has('prioridade')) {
-            $query->where('prioridade', $request->prioridade);
+        if (!empty($data)) {
+            if (null !== $data["status"]) {
+                $query->where('status', $data['status']);
+            }
+
+            if (null !== $data['prioridade']) {
+                $query->where('prioridade', $data['prioridade']);
+            }
         }
 
         $chamados = $query->latest()->get();

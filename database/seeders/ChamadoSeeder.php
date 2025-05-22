@@ -16,42 +16,42 @@ class ChamadoSeeder extends Seeder
             [
                 'titulo' => 'Problema com internet',
                 'descricao' => 'Sem acesso à internet no setor de TI.',
-                'categoria' => 'TI',
+                'categoria_chamado_id' => 1,
                 'prioridade' => 'Alta',
             ],
             [
                 'titulo' => 'Lâmpada queimada',
                 'descricao' => 'Lâmpada do corredor principal está queimada.',
-                'categoria' => 'Manutenção',
+                'categoria_chamado_id' => 2,
                 'prioridade' => 'Média',
             ],
             [
                 'titulo' => 'Erro no sistema de ponto',
                 'descricao' => 'Sistema de registro de ponto não está funcionando.',
-                'categoria' => 'TI',
+                'categoria_chamado_id' => 1,
                 'prioridade' => 'Alta',
             ],
             [
                 'titulo' => 'Solicitação de cadeira ergonômica',
                 'descricao' => 'Solicitação de troca por cadeira ergonômica.',
-                'categoria' => 'Suporte RH',
+                'categoria_chamado_id' => 3,
                 'prioridade' => 'Baixa',
             ],
             [
                 'titulo' => 'Impressora com atolamento',
                 'descricao' => 'Impressora da recepção está com papel atolado.',
-                'categoria' => 'TI',
+                'categoria_chamado_id' => 1,
                 'prioridade' => 'Média',
             ],
         ];
 
-        foreach ($chamados as $dados) {
+        foreach ($chamados as $chamado) {
             Chamado::firstOrCreate(
-                ['titulo' => $dados['titulo']],
+                ['titulo' => $chamado['titulo']],
                 [
-                    'descricao' => $dados['descricao'],
-                    'categoria' => $dados['categoria'],
-                    'prioridade' => $dados['prioridade'],
+                    'descricao' => $chamado['descricao'],
+                    'categoria_chamado_id' => $chamado['categoria_chamado_id'],
+                    'prioridade' => $chamado['prioridade'],
                     'status' => 'Aberto',
                     'user_id' => $colaborador->id,
                 ]
