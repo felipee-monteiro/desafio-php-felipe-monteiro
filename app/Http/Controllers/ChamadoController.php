@@ -11,9 +11,9 @@ class ChamadoController extends Controller
 {
     public function index()
     {
-        $chamados = auth()->user()->chamados()->latest()->get();
+        $chamados = auth()->user()->chamados()->with('categoria')->latest()->get();
 
-        return Inertia::render('Chamados/Index', compact('chamados'));
+        return Inertia::render('Chamados/Index', \compact('chamados'));
     }
 
     public function create()
@@ -37,7 +37,7 @@ class ChamadoController extends Controller
 
     public function show(Chamado $chamado)
     {
-        return Inertia::render('Chamados/Show', compact('chamado'));
+        return Inertia::render('Chamados/Show', \compact('chamado'));
     }
 }
 

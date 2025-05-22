@@ -22,6 +22,6 @@ class Chamado extends Model
     }
 
     public function categoria() {
-        return $this->hasOne(CategoriaChamado::class);
+        return $this->belongsTo(CategoriaChamado::class, "categoria_chamado_id");
     }
 }

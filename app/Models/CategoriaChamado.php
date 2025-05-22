@@ -9,4 +9,8 @@ class CategoriaChamado extends Model
     protected $fillable = [
         'name'
     ];
+
+    public function chamados() {
+        return $this->hasMany(Chamado::class);
+    }
 }
