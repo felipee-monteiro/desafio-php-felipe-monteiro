@@ -11,7 +11,7 @@ class ChamadoController extends Controller
 {
     public function index()
     {
-        $chamados = auth()->user()->chamados()->with('categoria')->latest()->get();
+        $chamados = auth()->user()->chamados()->latest()->get();
 
         return Inertia::render('Chamados/Index', \compact('chamados'));
     }
@@ -35,8 +35,14 @@ class ChamadoController extends Controller
         return redirect()->route('chamados.index')->with('success', 'Chamado criado com sucesso.');
     }
 
-    public function show(Chamado $chamado)
+    public function show(string $chamadoId)
     {
+        if (!is_numeric($chamadoId) || (int)$chamadoId >= \PHP_INT_MAX) {
+            abort(400, "Verifique o identificador do chamado e tente novamente.");
+        }
+
+        $chamado = Chamado::findOrFail($chamadoId);
+
         return Inertia::render('Chamados/Show', \compact('chamado'));
     }
 }
