@@ -11,7 +11,7 @@
                 </Link>
             </div>
 
-            <SuccessToast success="ops" />
+            <ErrorToast />
 
             <div
                 v-if="chamados.length === 0"
@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import SuccessToast from "@/Components/SuccessToast.vue";
+import ErrorToast from "@/Components/ErrorToast.vue";
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { Link } from "@inertiajs/vue3";
 

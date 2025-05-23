@@ -14,8 +14,8 @@ class SafeIntengerRule implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        if (!is_numeric($value) || (int)$value >= \PHP_INT_MAX) {
-            $fail("Verifique o campo \"$attribute\" e tente novamente.");
+        if ((int)$value >= \PHP_INT_MAX) {
+            $fail("Verifique o campo :attribute e tente novamente.");
         }
     }
 }

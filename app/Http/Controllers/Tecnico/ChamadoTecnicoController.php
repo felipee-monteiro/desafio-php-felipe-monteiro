@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Tecnico;
 
+use App\Composables\ShowChamado;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AlterarStatusChamadoTecnicoRequest;
 use App\Http\Requests\IndexChamadoTecnicoRequest;
@@ -11,6 +12,8 @@ use Inertia\Inertia;
 
 class ChamadoTecnicoController extends Controller
 {
+    use ShowChamado;
+
     public function index(IndexChamadoTecnicoRequest $request)
     {
         $query = Chamado::query();
@@ -30,11 +33,6 @@ class ChamadoTecnicoController extends Controller
         $chamados = $query->latest()->get();
 
         return Inertia::render('Tecnico/Chamados/Index', \compact('chamados'));
-    }
-
-    public function show(Chamado $chamado)
-    {
-        return Inertia::render('Tecnico/Chamados/Show', \compact('chamado'));
     }
 
     public function responder(ResponderChamadoTecnicoRequest $request, Chamado $chamado)

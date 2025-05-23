@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreChamadoRequest;
 use App\Models\CategoriaChamado;
-use App\Models\Chamado;
+use App\Composables\ShowChamado;
 use Inertia\Inertia;
 
 class ChamadoController extends Controller
 {
+    use ShowChamado;
+
     public function index()
     {
         $chamados = auth()->user()->chamados()->latest()->get();
@@ -33,18 +35,6 @@ class ChamadoController extends Controller
         $request->user()->chamados()->create($data);
 
         return redirect()->route('chamados.index')->with('success', 'Chamado criado com sucesso.');
-    }
-
-    public function show(string $chamadoId)
-    {
-        //TODO: ref to validation rule
-        if (!is_numeric($chamadoId) || (int)$chamadoId >= \PHP_INT_MAX) {
-            abort(400, "Verifique o identificador do chamado e tente novamente.");
-        }
-
-        $chamado = Chamado::findOrFail($chamadoId);
-
-        return Inertia::render('Chamados/Show', \compact('chamado'));
     }
 }
 

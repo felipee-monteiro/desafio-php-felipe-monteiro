@@ -45,7 +45,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
      * Rotas do COLABORADOR
      */
     Route::middleware('can:isColaborador')->group(function () {
-        Route::resource('chamados', ChamadoController::class);
+        Route::resources([
+            'chamados' => ChamadoController::class,
+        ]);
     });
 
     /**
