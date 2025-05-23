@@ -49,7 +49,8 @@
                             {{ chamado.titulo }}
                         </h2>
                         <p class="text-sm text-gray-500 mt-1">
-                            Categoria: {{ chamado.categoria }} | Prioridade:
+                            Categoria: {{ chamado.categoria.name }} |
+                            Prioridade:
                             {{ chamado.prioridade }}
                         </p>
                         <p class="text-sm font-medium mt-1">
@@ -72,10 +73,9 @@
 
 <script setup>
 import { router, Link } from "@inertiajs/vue3";
-import { reactive, ref } from "vue";
+import { reactive } from "vue";
 
-const { chamados } = defineProps({ chamados: Array });
-const initialChamados = ref(chamados);
+defineProps({ chamados: Array });
 
 const filters = reactive({
     status: "",
@@ -83,14 +83,8 @@ const filters = reactive({
 });
 
 function applyFilters() {
-    const shouldDoRequest = Object.values(filters).some(
-        (v) => typeof v === "string" && v.trim().length
-    );
-
-    if (shouldDoRequest) {
-        return router.get("/tecnico/chamados", filters, {
-            preserveState: true,
-        });
-    }
+    router.get("/tecnico/chamados", filters, {
+        preserveState: true,
+    });
 }
 </script>

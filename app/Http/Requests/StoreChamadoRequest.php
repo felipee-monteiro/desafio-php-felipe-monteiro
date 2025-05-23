@@ -29,4 +29,11 @@ class StoreChamadoRequest extends FormRequest
             'anexo' => 'nullable|file|max:2048',
         ];
     }
+
+    public function attributes(): array
+    {
+        return [
+            'categoria_chamado_id' => "categoria"
+        ];
+    }
 }

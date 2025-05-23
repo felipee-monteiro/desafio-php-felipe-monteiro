@@ -37,6 +37,7 @@ class ChamadoController extends Controller
 
     public function show(string $chamadoId)
     {
+        //TODO: ref to validation rule
         if (!is_numeric($chamadoId) || (int)$chamadoId >= \PHP_INT_MAX) {
             abort(400, "Verifique o identificador do chamado e tente novamente.");
         }
