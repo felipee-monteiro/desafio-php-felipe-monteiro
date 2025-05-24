@@ -8,7 +8,6 @@ import DropdownLink from "@/Components/DropdownLink.vue";
 import NavLink from "@/Components/NavLink.vue";
 import ResponsiveNavLink from "@/Components/ResponsiveNavLink.vue";
 import "vue-sonner/style.css";
-import { Toaster } from "vue-sonner";
 
 defineProps({
     title: String,
@@ -506,7 +505,6 @@ const logout = () => {
             <!-- Page Content -->
             <main>
                 <slot />
-                <Toaster position="top-right" :expand="true" rich-colors />
             </main>
         </div>
     </div>

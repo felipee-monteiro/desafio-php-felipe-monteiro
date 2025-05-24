@@ -5,3 +5,11 @@ export function isValidObject(v) {
 export function isValidString(v) {
     return typeof v === "string" && v.trim().length;
 }
+
+export function rmStringSpace(v) {
+    if (!isValidString(v)) {
+        throw new TypeError("v is not a valid string");
+    }
+
+    return v.trim();
+}

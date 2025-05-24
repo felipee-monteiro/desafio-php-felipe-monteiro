@@ -22,7 +22,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('titulo');
             $table->text('descricao');
-            $table->foreignId('categoria_chamado_id')->constrained();
+            $table->foreignId('categoria_chamado_id')->constrained()->onDelete('cascade');
             $table->enum('prioridade', ['Baixa', 'Média', 'Alta']);
             $table->enum('status', ['Aberto', 'Em atendimento', 'Resolvido', 'Fechado'])->default('Aberto');
             $table->string('anexo')->nullable();

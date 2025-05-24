@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaChamadoController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -58,5 +59,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('chamados/{chamado}', [ChamadoTecnicoController::class, 'show'])->name('chamados.show');
         Route::post('chamados/{chamado}/resposta', [ChamadoTecnicoController::class, 'responder'])->name('chamados.responder');
         Route::patch('chamados/{chamado}/status', [ChamadoTecnicoController::class, 'alterarStatus'])->name('chamados.status');
+
+        Route::resources([
+            'categorias' => CategoriaChamadoController::class
+        ], [
+            'names' => [
+                'categorias.index' => 'categorias.index',
+                'categorias.update' => 'categorias.update'
+            ]
+        ]);
     });
 });

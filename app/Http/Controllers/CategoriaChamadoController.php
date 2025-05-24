@@ -1,0 +1,64 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\StoreCategoriaChamadoRequest;
+use App\Http\Requests\UpdateCategoriaChamadoRequest;
+use App\Models\CategoriaChamado;
+use Inertia\Inertia;
+
+class CategoriaChamadoController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $categorias = CategoriaChamado::all();
+        return Inertia::render('Tecnico/Categorias/Index', \compact('categorias'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(StoreCategoriaChamadoRequest $request)
+    {
+        $data = $request->safe()->only(['name']);
+
+        CategoriaChamado::create($data);
+
+        return redirect()->route('tecnico.categorias.index')->with('success', 'Categoria criada com sucesso.');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(UpdateCategoriaChamadoRequest $request, string $id)
+    {
+        $newName = $request->validated('newName');
+
+        $categoriaChamado = CategoriaChamado::findOrFail($id);
+
+        $isUpdated = $categoriaChamado->updateOrFail([
+            'name' => $newName
+        ]);
+
+        if (!$isUpdated) {
+            abort(500);
+        }
+
+        return redirect()->route('tecnico.categorias.index')->with('success', 'Categoria atualizada com sucesso.');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $categoriaChamado = CategoriaChamado::findOrFail($id);
+
+        $categoriaChamado->delete();
+
+        return redirect()->route('tecnico.categorias.index')->with('success', 'Categoria Excluída com sucesso!');
+    }
+}
