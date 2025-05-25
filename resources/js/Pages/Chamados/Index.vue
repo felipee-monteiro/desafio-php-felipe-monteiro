@@ -6,10 +6,10 @@
     >
         <template #createButton>
             <Link
-                :href="createAttrs.href"
+                href="/chamados/create"
                 class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
             >
-                Novo Chamado Refatorado
+                Novo Chamado
             </Link>
         </template>
         <template #default="{ data }">

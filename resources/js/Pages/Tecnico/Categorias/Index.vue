@@ -56,7 +56,7 @@
                 <div class="flex gap-2">
                     <!-- Edit dialog -->
                     <Dialog
-                        :title="getEditCategoryDialogTitle(data.name)"
+                        :title="`Editar Categoria - ${data.name}`"
                         decription="Edite a categoria dos chamados"
                     >
                         <template #trigger>
@@ -147,10 +147,6 @@ const editData = useForm({
 const createData = useForm({
     name: "",
 });
-
-function getEditCategoryDialogTitle(data) {
-    return `Editar categoria - ${data}`;
-}
 
 function handleCreate() {
     createData.post(`/tecnico/categorias`);
