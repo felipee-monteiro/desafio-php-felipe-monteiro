@@ -10,7 +10,7 @@ class ChamadoSeeder extends Seeder
 {
     public function run(): void
     {
-        $colaborador = User::where('role', 'colaborador')->first();
+        $colaborador = User::where('role_id', 1)->first();
 
         $chamados = [
             [

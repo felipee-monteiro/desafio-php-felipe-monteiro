@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->enum('role', ['colaborador', 'tecnico'])->default('colaborador');
+        Schema::table('users', function(Blueprint $table) {
+            $table->foreignId('role_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -21,8 +21,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        //
     }
 };

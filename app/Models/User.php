@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -64,22 +66,26 @@ class User extends Authenticatable
         ];
     }
 
-    public function isColaborador()
+    public function isColaborador(): bool
     {
-        return $this->role === 'colaborador';
+        return $this->role->name === 'colaborador';
     }
 
-    public function isTecnico()
+    public function isTecnico(): bool
     {
-        return $this->role === 'tecnico';
+        return $this->role->name === 'tecnico';
     }
 
-    public function respostas() {
+    public function respostas(): HasMany {
         return $this->hasMany(Resposta::class);
     }
 
-    public function chamados()
+    public function chamados(): HasMany
     {
         return $this->hasMany(Chamado::class, 'user_id');
+    }
+
+    public function role(): HasOne {
+        return $this->hasOne(Roles::class, 'id', 'role_id');
     }
 }
