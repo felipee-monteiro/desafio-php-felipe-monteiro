@@ -21,6 +21,7 @@
         "vue": "^3.3.13"
     },
     "dependencies": {
+        "@vee-validate/zod": "^4.15.0",
         "@vueuse/core": "^13.2.0",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
@@ -29,6 +30,8 @@
         "reka-ui": "^2.2.1",
         "tailwind-merge": "^3.3.0",
         "tailwindcss-animate": "^1.0.7",
-        "vue-sonner": "^2.0.0"
+        "vee-validate": "^4.15.0",
+        "vue-sonner": "^2.0.0",
+        "zod": "^3.25.28"
     }
 }
