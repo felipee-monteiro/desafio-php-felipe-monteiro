@@ -158,7 +158,7 @@ function handleCreate() {
 
 function handleEdit(data) {
     if (rmStringSpace(editData.newName) === rmStringSpace(data.name)) {
-        alert("Por favor, escolha um nome diferente");
+        return alert("Por favor, escolha um nome diferente");
     }
 
     editData.put(`/tecnico/categorias/${data.id}`);

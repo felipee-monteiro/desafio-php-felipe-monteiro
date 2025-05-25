@@ -22,7 +22,7 @@ class UpdateCategoriaChamadoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'newName' => 'required|string'
+            'newName' => 'required|string|unique:categoria_chamados,name|max:255'
         ];
     }
 }
