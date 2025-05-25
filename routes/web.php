@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ChamadoController;
 use App\Http\Controllers\Tecnico\ChamadoTecnicoController;
+use App\Http\Controllers\UsersTecnicoController;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -61,11 +62,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::patch('chamados/{chamado}/status', [ChamadoTecnicoController::class, 'alterarStatus'])->name('chamados.status');
 
         Route::resources([
-            'categorias' => CategoriaChamadoController::class
+            'categorias' => CategoriaChamadoController::class,
+            'users' => UsersTecnicoController::class
         ], [
             'names' => [
                 'categorias.index' => 'categorias.index',
-                'categorias.update' => 'categorias.update'
+                'categorias.update' => 'categorias.update',
+                'users.index' => 'users.index'
             ]
         ]);
     });

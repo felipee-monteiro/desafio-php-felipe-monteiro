@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Composables\ParseTimestamps;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -13,7 +14,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens;
+    use HasApiTokens, ParseTimestamps;
 
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory;
@@ -52,6 +53,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    protected $with = ['role'];
 
     /**
      * Get the attributes that should be cast.
