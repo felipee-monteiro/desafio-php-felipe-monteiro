@@ -135,9 +135,9 @@ import Dialog from "@/Components/Dialog.vue";
 import { Input } from "@/Components/ui/input";
 import { Label } from "@/Components/ui/label";
 import CrudLayout from "@/Layouts/CrudLayout.vue";
-import { isValidObject, rmStringSpace } from "@/utils";
-import { toast } from "vue-sonner";
-import { useForm, router } from "@inertiajs/vue3";
+import { rmStringSpace } from "@/utils";
+import { router } from "@inertiajs/vue3";
+import useForm, { globalConfig } from "@/Composables/form.js";
 import { DialogClose } from "@/Components/ui/dialog";
 
 const editData = useForm({
@@ -153,19 +153,7 @@ function getEditCategoryDialogTitle(data) {
 }
 
 function handleCreate() {
-    createData.post(`/tecnico/categorias`, {
-        async: true,
-        onSuccess: function () {
-            toast.success("Categoria criada com sucesso!");
-        },
-        onError: function (e) {
-            if (isValidObject(e)) {
-                Object.values(e).forEach(function (i) {
-                    toast.error(i);
-                });
-            }
-        },
-    });
+    createData.post(`/tecnico/categorias`);
 }
 
 function handleEdit(data) {
@@ -173,21 +161,11 @@ function handleEdit(data) {
         alert("Por favor, escolha um nome diferente");
     }
 
-    editData.put(`/tecnico/categorias/${data.id}`, {
-        async: true,
-        onSuccess: function () {
-            toast.success("Categoria atualizada com sucesso!");
-        },
-    });
+    editData.put(`/tecnico/categorias/${data.id}`);
 }
 
 function handleDelete(id) {
-    router.delete(`/tecnico/categorias/${id}`, {
-        async: true,
-        onSuccess: function () {
-            toast.success("Categoria excluída com sucesso!");
-        },
-    });
+    router.delete(`/tecnico/categorias/${id}`, globalConfig);
 }
 
 defineProps({ categorias: { type: Array, required: true } });
