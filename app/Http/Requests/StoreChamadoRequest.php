@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\SafeIntengerRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreChamadoRequest extends FormRequest
@@ -24,7 +25,8 @@ class StoreChamadoRequest extends FormRequest
         return [
             'titulo' => 'required|string|max:255',
             'descricao' => 'required',
-            'categoria_chamado_id' => 'required|exists:categoria_chamados,id',
+            'status_chamados_id' => ['required', 'numeric', new SafeIntengerRule, 'exists:status_chamados,id'],
+            'categoria_chamado_id' => ['required', 'numeric', new SafeIntengerRule, 'exists:categoria_chamados,id'],
             'prioridade' => 'required|in:Baixa,Média,Alta',
             'anexo' => 'nullable|file|max:2048',
         ];

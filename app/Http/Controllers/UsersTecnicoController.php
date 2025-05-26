@@ -15,7 +15,7 @@ class UsersTecnicoController extends Controller
     public function index()
     {
         $data = [
-            'users' => User::all(),
+            'users' => User::whereNot('id', auth()->user()->id)->get(),
             'roles' => Roles::all(),
         ];
 

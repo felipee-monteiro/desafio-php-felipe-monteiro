@@ -1,6 +1,6 @@
 <script setup>
 import ChamadoCard from "@/Components/ChamadoCard.vue";
-const { chamado } = defineProps({ chamado: Object });
+defineProps({ chamado: Object });
 </script>
 
 <template>

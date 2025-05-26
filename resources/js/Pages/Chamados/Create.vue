@@ -103,6 +103,7 @@ defineProps({ categoriasChamado: Array });
 const form = useForm({
     titulo: "",
     descricao: "",
+    status_chamados_id: 1,
     categoria_chamado_id: 1,
     prioridade: "Média",
     anexo: null,

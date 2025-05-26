@@ -1,6 +1,6 @@
 # Técnico
 
--   Mostrar anexos nos detalhes do chamado;
+-   Mostrar anexos nos detalhes do chamado (Feito);
 -   Alterar Status;
 -   Responder Chamados;
 
@@ -14,6 +14,8 @@
 -   CRUD Status chamado;
 -   CRUD Prioridades chamado;
 -   Finalizar I18N
+-   Implementar foto de perfil com o jetstream
+-   Verificação de e-mail (implantar servidor local)
 
 # Bugs
 

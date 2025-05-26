@@ -17,6 +17,7 @@ class Chamado extends Model
         'tecnico_id',
         'titulo',
         'descricao',
+        'status_chamados_id',
         'categoria_chamado_id',
         'prioridade',
         'status',

@@ -29,11 +29,14 @@
                                 em: {{ chamado.created_at }} | Atualizado em:
                                 {{ chamado.updated_at }}
                             </p>
-                            <p class="text-sm font-medium mt-1">
+                            <p class="flex gap-1 text-sm font-medium mt-1">
                                 Status:
-                                <span class="text-blue-600">{{
-                                    chamado.status.name
-                                }}</span>
+                                <div v-if="isTecnico()">
+                                    <StatusChamadosOptions :status-chamados="statusChamados" />
+                                </div>
+                                <p v-else>
+                                    {{ chamado.status.name }}
+                                </p>
                             </p>
                             <p class="text-sm font-medium mt-1">
                                 Responsável:
@@ -46,6 +49,13 @@
                                 <span class="text-gray-700">{{
                                     chamado.descricao
                                 }}</span>
+                                <div v-show="isValidString(chamado.anexo)">
+                                    <a target="_blank" :href="`/storage/${chamado.anexo}`">
+                                        Anexo: <span class="text-sm text-blue-600 hover:underline">
+                                            {{ chamado.anexo }}
+                                        </span>
+                                    </a>
+                                </div>
                             </p>
                         </div>
                     </div>
@@ -56,8 +66,9 @@
 </template>
 
 <script setup>
-import { isValidObject } from "@/utils";
+import { isValidObject, isValidString } from "@/utils";
 import { usePage } from "@inertiajs/vue3";
+import StatusChamadosOptions from "./StatusChamadosOptions.vue";
 
 const {
     props: { auth },
@@ -69,5 +80,7 @@ function isTecnico() {
     return roleID === 2;
 }
 
-defineProps({ chamado: { type: Object, required: true } });
+const {statusChamados} = defineProps({ chamado: { type: Object, required: true }, statusChamados: Array });
+
+console.log(statusChamados);
 </script>

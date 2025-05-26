@@ -3,6 +3,7 @@
 namespace App\Composables;
 
 use App\Models\Chamado;
+use App\Models\StatusChamado;
 use App\Rules\SafeIntengerRule;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
@@ -19,8 +20,14 @@ trait ShowChamado
             abort(400);
         }
 
-        $chamado = Chamado::findOrFail($chamadoId);
+        $componentData = [
+            'chamado' => Chamado::findOrFail($chamadoId),
+        ];
 
-        return Inertia::render('Chamados/Show', \compact('chamado'));
+        if (auth()->user()->isTecnico()) {
+            $componentData['statusChamados'] = StatusChamado::all();
+        }
+
+        return Inertia::render('Chamados/Show', $componentData);
     }
 }

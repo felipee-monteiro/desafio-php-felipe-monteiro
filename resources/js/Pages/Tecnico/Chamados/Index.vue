@@ -56,7 +56,7 @@
                         <p class="text-sm font-medium mt-1">
                             Status:
                             <span class="text-blue-600">{{
-                                chamado.status
+                                chamado.status.name
                             }}</span>
                         </p>
                     </div>
