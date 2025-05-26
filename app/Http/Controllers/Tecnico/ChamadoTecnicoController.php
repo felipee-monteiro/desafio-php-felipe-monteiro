@@ -37,7 +37,7 @@ class ChamadoTecnicoController extends Controller
 
     public function responder(ResponderChamadoTecnicoRequest $request, Chamado $chamado)
     {
-        $mensagem = $request->safe()->only(['mensagem']);
+        $mensagem = $request->safe()->only('mensagem');
 
         $chamado->respostas()->create([
             'user_id' => auth()->id(),

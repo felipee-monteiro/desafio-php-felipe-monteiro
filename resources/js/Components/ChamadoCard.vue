@@ -58,5 +58,5 @@
 <script setup>
 import { isValidObject } from "@/utils";
 
-defineProps({ chamado: Object });
+defineProps({ chamado: { type: Object, required: true } });
 </script>

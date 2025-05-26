@@ -43,6 +43,6 @@ class UsersTecnicoController extends Controller
 
         $user->save();
 
-        return \redirect()->back()->with('success', 'Role atualizada com sucesso');
+        return back()->with('success', 'Role atualizada com sucesso');
     }
 }
