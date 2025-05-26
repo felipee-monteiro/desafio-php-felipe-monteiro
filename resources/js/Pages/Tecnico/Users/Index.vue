@@ -30,94 +30,104 @@
                             </template>
                             <template #default>
                                 <div class="my-2">
-                                    <div class="space-y-4">
-                                        <FormField
-                                            v-model="editData.isActive"
-                                            name="isActive"
-                                        >
-                                            <FormItem
-                                                class="flex flex-row items-center justify-between rounded-lg border p-4"
-                                            >
-                                                <div class="space-y-0.5">
-                                                    <FormLabel
-                                                        class="text-base"
-                                                    >
-                                                        Permitir acesso
-                                                    </FormLabel>
-                                                    <FormDescription>
-                                                        Permitir que este
-                                                        usuário acesse a
-                                                        plataforma
-                                                        <br />com sua role atual
-                                                    </FormDescription>
-                                                </div>
-                                                <FormControl>
-                                                    <Switch
-                                                        :v-model="
-                                                            editData.isActive
+                                    <form
+                                        id="edit.submit"
+                                        @submit.prevent="handleEdit(data.id)"
+                                    >
+                                        <div class="space-y-4">
+                                            <FormField name="isActive">
+                                                <FormItem
+                                                    class="flex flex-row items-center justify-between rounded-lg border p-4"
+                                                >
+                                                    <div class="space-y-0.5">
+                                                        <FormLabel
+                                                            class="text-base"
+                                                        >
+                                                            Permitir acesso
+                                                        </FormLabel>
+                                                        <FormDescription>
+                                                            Permitir que este
+                                                            usuário acesse a
+                                                            plataforma
+                                                            <br />com sua role
+                                                            atual
+                                                        </FormDescription>
+                                                    </div>
+                                                    <FormControl>
+                                                        <Switch
+                                                            v-model="
+                                                                editData.isActive
+                                                            "
+                                                        />
+                                                    </FormControl>
+                                                </FormItem>
+                                            </FormField>
+                                            <FormField name="role_id">
+                                                <FormItem
+                                                    class="flex flex-col gap-2 items-center justify-between rounded-lg border p-4"
+                                                >
+                                                    <div class="space-y-0.5">
+                                                        <FormLabel
+                                                            class="text-base"
+                                                        >
+                                                            Role
+                                                        </FormLabel>
+                                                        <FormDescription>
+                                                            Mecanismo que dá
+                                                            acessos especiais à
+                                                            áreas exclusivas do
+                                                            sistema,
+                                                            correspondente ao
+                                                            papel do usuário na
+                                                            vida real.
+                                                        </FormDescription>
+                                                    </div>
+                                                    <FormControl
+                                                        v-model="
+                                                            editData.role_id
                                                         "
-                                                        @update="void 0"
-                                                    />
-                                                </FormControl>
-                                            </FormItem>
-                                        </FormField>
-                                        <FormField
-                                            v-model="editData.role_id"
-                                            name="role_id"
-                                        >
-                                            <FormItem
-                                                class="flex flex-col gap-2 items-center justify-between rounded-lg border p-4"
-                                            >
-                                                <div class="space-y-0.5">
-                                                    <FormLabel
-                                                        class="text-base"
                                                     >
-                                                        Role
-                                                    </FormLabel>
-                                                    <FormDescription>
-                                                        Mecanismo que dá acessos
-                                                        especiais à áreas
-                                                        exclusivas do sistema,
-                                                        correspondente ao papel
-                                                        do usuário na vida real.
-                                                    </FormDescription>
-                                                </div>
-                                                <FormControl>
-                                                    <Select>
-                                                        <SelectTrigger>
-                                                            <SelectValue
-                                                                :placeholder="
-                                                                    data.role
-                                                                        .name
-                                                                "
-                                                            />
-                                                        </SelectTrigger>
-                                                        <SelectContent>
-                                                            <SelectGroup>
-                                                                <SelectLabel
-                                                                    >Roles</SelectLabel
-                                                                >
-
-                                                                <div
-                                                                    v-for="role of roles"
-                                                                >
-                                                                    <SelectItem
-                                                                        :value="
-                                                                            role.id
-                                                                        "
+                                                        <Select
+                                                            v-bind:default-value="
+                                                                data.role_id
+                                                            "
+                                                        >
+                                                            <SelectTrigger>
+                                                                <SelectValue
+                                                                    :placeholder="
+                                                                        data
+                                                                            .role
+                                                                            .name
+                                                                    "
+                                                                />
+                                                            </SelectTrigger>
+                                                            <SelectContent>
+                                                                <SelectGroup>
+                                                                    <SelectLabel
+                                                                        >Roles</SelectLabel
                                                                     >
-                                                                        {{
-                                                                            role.name
-                                                                        }}
-                                                                    </SelectItem>
-                                                                </div>
-                                                            </SelectGroup>
-                                                        </SelectContent>
-                                                    </Select>
-                                                </FormControl>
-                                            </FormItem>
-                                        </FormField>
-                                    </div>
+
+                                                                    <div
+                                                                        v-for="role of roles"
+                                                                    >
+                                                                        <SelectItem
+                                                                            :value="
+                                                                                role.id
+                                                                            "
+                                                                        >
+                                                                            {{
+                                                                                role.name
+                                                                            }}
+                                                                        </SelectItem>
+                                                                    </div>
+                                                                </SelectGroup>
+                                                            </SelectContent>
+                                                        </Select>
+                                                    </FormControl>
+                                                </FormItem>
+                                            </FormField>
+                                        </div>
+                                    </form>
                                 </div>
                             </template>
                             <template #footer>
@@ -165,8 +175,8 @@ const editData = useForm({
     isActive: true,
 });
 
-function handleEdit(data) {
-    editData.put(`/tecnico/users/${data.id}`);
+function handleEdit(id) {
+    editData.put(`/tecnico/users/${id}`);
 }
 
 defineProps({

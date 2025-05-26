@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateUsersTecnicoRequest;
 use App\Models\Roles;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class UsersTecnicoController extends Controller
@@ -14,57 +14,29 @@ class UsersTecnicoController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        $roles = Roles::all();
+        $data = [
+            'users' => User::all(),
+            'roles' => Roles::all(),
+        ];
 
-        return Inertia::render('Tecnico/Users/Index', \compact('users', 'roles'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        return Inertia::render('Tecnico/Users/Index', $data);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateUsersTecnicoRequest $request, string $id)
     {
-        //
-    }
+        $data = $request->safe()->only(['role_id', 'isActive']);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $user = User::findOrFail($id);
+
+        \extract($data);
+
+        $user->role_id = $role_id;
+
+        $user->save();
+
+        return \redirect()->back()->with('success', 'Role atualizada com sucesso');
     }
 }
