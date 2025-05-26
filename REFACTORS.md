@@ -20,4 +20,4 @@
 # Bugs
 
 -   Modal de edição de permissões de usuário;
--   Campos obrigatórios em atualizar usuários (gerenciamento)
+-   Campos obrigatórios em atualizar usuários (Feito);

@@ -162,7 +162,7 @@ import { Switch } from "@/Components/ui/switch";
 import useForm from "@/Composables/form.js";
 
 const editData = useForm({
-    role_id: 0,
+    role_id: null,
     is_active: true,
 });
 
