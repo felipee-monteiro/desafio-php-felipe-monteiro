@@ -87,11 +87,7 @@
                                                             editData.role_id
                                                         "
                                                     >
-                                                        <Select
-                                                            v-bind:default-value="
-                                                                data.role_id
-                                                            "
-                                                        >
+                                                        <Select>
                                                             <SelectTrigger>
                                                                 <SelectValue
                                                                     :placeholder="
@@ -117,6 +113,7 @@
                                                                             :value="
                                                                                 role.id
                                                                             "
+                                                                            selected
                                                                         >
                                                                             {{
                                                                                 role.name
