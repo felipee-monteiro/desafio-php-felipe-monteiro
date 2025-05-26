@@ -88,7 +88,7 @@ docker compose up -d postgres nginx
 -   Execute as migrations e seeders:
 
     ```
-    php artisan migrate --seed
+    php artisan migrate:fresh --seed
     ```
 
     > Esse comando é responsável por criar a estrutura e popular seu banco de dados com alguns dados iniciais.
