@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { Head, Link, router } from "@inertiajs/vue3";
+import { PT_BR_LABELS } from "@/i18n";
 import ApplicationMark from "@/Components/ApplicationMark.vue";
 import Banner from "@/Components/Banner.vue";
 import Dropdown from "@/Components/Dropdown.vue";
@@ -260,13 +261,13 @@ const logout = () => {
                                         <div
                                             class="block px-4 py-2 text-xs text-gray-400"
                                         >
-                                            Manage Account
+                                            {{ PT_BR_LABELS["Manage Account"] }}
                                         </div>
 
                                         <DropdownLink
                                             :href="route('profile.show')"
                                         >
-                                            Profile
+                                            {{ PT_BR_LABELS["Profile"] }}
                                         </DropdownLink>
 
                                         <DropdownLink
@@ -284,7 +285,7 @@ const logout = () => {
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
                                             <DropdownLink as="button">
-                                                Log Out
+                                                {{ PT_BR_LABELS["logout"] }}
                                             </DropdownLink>
                                         </form>
                                     </template>

@@ -79,11 +79,15 @@ const clearPhotoFileInput = () => {
 <template>
     <FormSection @submitted="updateProfileInformation">
         <template #title>
-            {{ PT_BR_LABELS["profile.information"] }}
+            {{ PT_BR_LABELS["Profile Information"] }}
         </template>
 
         <template #description>
-            {{ PT_BR_LABELS["profile.update_info"] }}
+            {{
+                PT_BR_LABELS[
+                    "Update your account profile information and email address."
+                ]
+            }}
         </template>
 
         <template #form>
@@ -176,7 +180,7 @@ const clearPhotoFileInput = () => {
                     "
                 >
                     <p class="text-sm mt-2">
-                        {{ PT_BR_LABELS["profile.email_unverified"] }}
+                        {{ PT_BR_LABELS["Your email address is unverified."] }}
 
                         <Link
                             :href="route('verification.send')"
@@ -193,8 +197,11 @@ const clearPhotoFileInput = () => {
                         v-show="verificationLinkSent"
                         class="mt-2 font-medium text-sm text-green-600"
                     >
-                        A new verification link has been sent to your email
-                        address.
+                        {{
+                            PT_BR_LABELS[
+                                "A new verification link has been sent to the email address you provided during registration."
+                            ]
+                        }}
                     </div>
                 </div>
             </div>
@@ -209,7 +216,7 @@ const clearPhotoFileInput = () => {
                 :class="{ 'opacity-25': form.processing }"
                 :disabled="form.processing"
             >
-                Save
+                {{ PT_BR_LABELS["Save"] }}
             </PrimaryButton>
         </template>
     </FormSection>

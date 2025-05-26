@@ -18,7 +18,7 @@ defineProps({
     <AppLayout title="Perfil">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ PT_BR_LABELS["profile"] }}
+                {{ PT_BR_LABELS["Profile"] }}
             </h2>
         </template>
 

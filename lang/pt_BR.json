@@ -192,11 +192,21 @@
     "Light": "Claro",
     "Dark": "Escuro",
     "System": "Sistema",
+    "When two factor authentication is enabled, you will be prompted for a secure random token during authentication. You may retrieve this token from your phone's Google Authenticator application.": "Quando a autenticação de dois fatores estiver ativada, será solicitado que você forneça um token aleatório seguro durante a autenticação. Você pode recuperar esse token no aplicativo Google Authenticator do seu telefone.",
     "Manage your profile and account settings": "Gerencie seu perfil e configurações de conta",
     "Update your name and email address": "Atualize seu nome e endereço de e-mail",
     "Delete your account and all of its resources": "Deletar sua conta e todos os seus dados e recursos",
     "Ensure your account is using a long, random password to stay secure": "Certifique-se de que sua conta esteja usando uma senha longa e aleatória para permanecer segura",
+    "The provided password was incorrect.": "A senha fornecida está incorreta.",
+    "To finish enabling two factor authentication, scan the following QR code using your phone's authenticator application or enter the setup key and provide the generated OTP code.": "Para concluir a ativação da autenticação de dois fatores, digitalize o seguinte código QR usando o aplicativo autenticador do seu telefone ou digite a chave de configuração e forneça o código OTP gerado.",
+    "Setup Key": "Chave de configuração",
     "Log in to your account": "Entrar na sua conta",
     "Enter your email and password below to log in": "Digite seu e-mail e senha abaixo para entrar",
-    "Don't have an account?": "Não tem uma conta?"
+    "Finish enabling two factor authentication.": "Conclua a ativação da autenticação de dois fatores.",
+    "This device": "Este dispositivo",
+    "Don't have an account?": "Não tem uma conta?",
+    "Last active": "Visto por último",
+    "Done": "Concluído",
+    "Done.": "Concluído",
+    "Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.": "Digite sua senha para confirmar que deseja sair de suas outras sessões do navegador em todos os seus dispositivos."
 }

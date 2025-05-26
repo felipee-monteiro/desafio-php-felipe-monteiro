@@ -51,7 +51,7 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" :value="PT_BR_LABELS['password']" />
+                <InputLabel for="password" :value="PT_BR_LABELS['Password']" />
                 <TextInput
                     id="password"
                     v-model="form.password"
