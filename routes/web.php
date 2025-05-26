@@ -46,7 +46,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     /**
      * Rotas do COLABORADOR
      */
-    Route::middleware('can:isColaborador')->group(function () {
+    Route::middleware(['can:isColaborador', 'can:isActive'])->group(function () {
         Route::resources([
             'chamados' => ChamadoController::class,
         ]);
@@ -55,7 +55,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     /**
      * Rotas do TÉCNICO
      */
-    Route::prefix('tecnico')->name('tecnico.')->middleware('can:isTecnico')->group(function () {
+    Route::prefix('tecnico')->name('tecnico.')->middleware(['can:isTecnico', 'can:isActive'])->group(function () {
         Route::get('chamados', [ChamadoTecnicoController::class, 'index'])->name('chamados.index');
         Route::get('chamados/{chamado}', [ChamadoTecnicoController::class, 'show'])->name('chamados.show');
         Route::post('chamados/{chamado}/resposta', [ChamadoTecnicoController::class, 'responder'])->name('chamados.responder');

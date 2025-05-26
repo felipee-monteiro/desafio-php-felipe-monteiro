@@ -35,7 +35,7 @@
                                         @submit.prevent="handleEdit(data.id)"
                                     >
                                         <div class="space-y-4">
-                                            <FormField name="isActive">
+                                            <FormField name="is_active">
                                                 <FormItem
                                                     class="flex flex-row items-center justify-between rounded-lg border p-4"
                                                 >
@@ -56,7 +56,7 @@
                                                     <FormControl>
                                                         <Switch
                                                             v-model="
-                                                                editData.isActive
+                                                                editData.is_active
                                                             "
                                                         />
                                                     </FormControl>
@@ -175,7 +175,7 @@ import AppLayout from "@/Layouts/AppLayout.vue";
 
 const editData = useForm({
     role_id: 0,
-    isActive: true,
+    is_active: true,
 });
 
 function handleEdit(id) {

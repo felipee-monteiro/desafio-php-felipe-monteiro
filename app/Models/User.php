@@ -71,6 +71,10 @@ class User extends Authenticatable
         ];
     }
 
+    public function isActive(): bool {
+        return $this->is_active;
+    }
+
     public function isColaborador(): bool
     {
         return $this->role->name === 'colaborador';

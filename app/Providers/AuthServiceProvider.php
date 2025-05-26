@@ -13,5 +13,6 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('isColaborador', fn ($user) => $user->isColaborador());
         Gate::define('isTecnico', fn ($user) => $user->isTecnico());
+        Gate::define('isActive', fn ($user) => $user->isActive());
     }
 }

@@ -23,8 +23,8 @@ class UpdateUsersTecnicoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'role_id' => ['sometimes', 'numeric', new SafeIntengerRule, 'exists:roles,id'],
-            'isActive' => 'sometimes|boolean',
+            'role_id' => ['nullable', 'sometimes', 'numeric', new SafeIntengerRule, 'exists:roles,id'],
+            'is_active' => 'nullable|sometimes|boolean',
         ];
     }
 }

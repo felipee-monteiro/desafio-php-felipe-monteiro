@@ -25,7 +25,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('respostas');
         Schema::dropIfExists('chamados');
-        // Schema::dropIfExists('users');
         Schema::dropIfExists('roles');
     }
 };

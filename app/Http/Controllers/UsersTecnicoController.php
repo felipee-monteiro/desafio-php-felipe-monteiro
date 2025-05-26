@@ -27,13 +27,19 @@ class UsersTecnicoController extends Controller
      */
     public function update(UpdateUsersTecnicoRequest $request, string $id)
     {
-        $data = $request->safe()->only(['role_id', 'isActive']);
+        $data = $request->safe()->only(['role_id', 'is_active']);
 
         $user = User::findOrFail($id);
 
         \extract($data);
 
-        $user->role_id = $role_id;
+        if (null !== $role_id) {
+            $user->role_id = $role_id;
+        }
+
+        if (null !== $is_active) {
+            $user->is_active = $is_active;
+        }
 
         $user->save();
 
