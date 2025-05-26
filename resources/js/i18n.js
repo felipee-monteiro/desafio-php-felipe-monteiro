@@ -54,8 +54,14 @@ export const PT_BR_LABELS = {
     "reset_password": getPTBRI18NValueByKey("Reset Password"),
 
     //Auth::validate_email
-    "auth.email_verification": getPTBRI18NValueByKey("auth.email_verification"),
-    "auth.resend_verification_email": getPTBRI18NValueByKey("auth.resend_verification_email"),
-    "auth.edit_profile": getPTBRI18NValueByKey("auth.edit_profile"),
-    "auth.verification_link_sended": getPTBRI18NValueByKey("A new verification link has been sent to the email address you provided during registration."),
+    "Before continuing, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another.": getPTBRI18NValueByKey("auth.email_verification"),
+    "Resend Verification Email": getPTBRI18NValueByKey("auth.resend_verification_email"),
+    "Edit Profile": getPTBRI18NValueByKey("auth.edit_profile"),
+    "A new verification link has been sent to the email address you provided during registration.": getPTBRI18NValueByKey("A new verification link has been sent to the email address you provided during registration."),
+
+    //Profile Managment
+    "profile": getPTBRI18NValueByKey("Profile"),
+    "profile.information": getPTBRI18NValueByKey("Profile Information"),
+    "profile.update_info": getPTBRI18NValueByKey("Update your account profile information and email address."),
+    "profile.email_unverified": getPTBRI18NValueByKey("Your email address is unverified."),
 };

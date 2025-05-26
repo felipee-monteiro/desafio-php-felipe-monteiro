@@ -30,14 +30,22 @@ const verificationLinkSent = computed(
         </template>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ PT_BR_LABELS["auth.email_verification"] }}
+            {{
+                PT_BR_LABELS[
+                    "Before continuing, could you verify your email address by clicking on the link we just emailed to you? If you didn't receive the email, we will gladly send you another."
+                ]
+            }}
         </div>
 
         <div
             v-if="verificationLinkSent"
             class="mb-4 font-medium text-sm text-green-600"
         >
-            {{ PT_BR_LABELS["auth.verification_link_sended"] }}
+            {{
+                PT_BR_LABELS[
+                    "A new verification link has been sent to the email address you provided during registration."
+                ]
+            }}
         </div>
 
         <form @submit.prevent="submit">
@@ -46,7 +54,7 @@ const verificationLinkSent = computed(
                     :class="{ 'opacity-25': form.processing }"
                     :disabled="form.processing"
                 >
-                    {{ PT_BR_LABELS["auth.resend_verification_email"] }}
+                    {{ PT_BR_LABELS["Resend Verification Email"] }}
                 </PrimaryButton>
 
                 <div>
@@ -54,7 +62,7 @@ const verificationLinkSent = computed(
                         :href="route('profile.show')"
                         class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     >
-                        {{ PT_BR_LABELS["auth.edit_profile"] }}
+                        {{ PT_BR_LABELS["Edit Profile"] }}
                     </Link>
                     <Link
                         :href="route('logout')"
