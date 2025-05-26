@@ -6,6 +6,7 @@ use App\Composables\ParseTimestamps;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Chamado extends Model
 {
@@ -23,7 +24,7 @@ class Chamado extends Model
     ];
 
     protected $hidden = ['categoria_chamado_id'];
-    protected $with = ['categoria', 'responsavel'];
+    protected $with = ['categoria', 'responsavel', 'status'];
 
     public function respostas(): HasMany {
         return $this->hasMany(Resposta::class);
@@ -35,5 +36,9 @@ class Chamado extends Model
 
     public function categoria(): BelongsTo {
         return $this->belongsTo(CategoriaChamado::class, "categoria_chamado_id");
+    }
+
+    public function status(): HasOne {
+        return $this->hasOne(StatusChamado::class, 'id', 'status_chamados_id');
     }
 }

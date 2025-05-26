@@ -52,7 +52,7 @@ class ChamadoSeeder extends Seeder
                     'descricao' => $chamado['descricao'],
                     'categoria_chamado_id' => $chamado['categoria_chamado_id'],
                     'prioridade' => $chamado['prioridade'],
-                    'status' => 'Aberto',
+                    'status_chamados_id' => 1,
                     'user_id' => $colaborador->id,
                 ]
             );

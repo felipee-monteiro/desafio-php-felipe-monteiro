@@ -24,7 +24,9 @@
                     </p>
                     <p class="text-sm font-medium mt-1">
                         Status:
-                        <span class="text-blue-600">{{ data.status }}</span>
+                        <span class="text-blue-600">{{
+                            data.status.name
+                        }}</span>
                     </p>
                 </div>
                 <Link

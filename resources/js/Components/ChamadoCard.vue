@@ -32,7 +32,7 @@
                             <p class="text-sm font-medium mt-1">
                                 Status:
                                 <span class="text-blue-600">{{
-                                    chamado.status
+                                    chamado.status.name
                                 }}</span>
                             </p>
                             <p class="text-sm font-medium mt-1">
@@ -57,6 +57,17 @@
 
 <script setup>
 import { isValidObject } from "@/utils";
+import { usePage } from "@inertiajs/vue3";
+
+const {
+    props: { auth },
+} = usePage();
+
+const roleID = auth.user.role_id;
+
+function isTecnico() {
+    return roleID === 2;
+}
 
 defineProps({ chamado: { type: Object, required: true } });
 </script>

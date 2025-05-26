@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             UserSeeder::class,
             CategoriaChamadosSeeder::class,
+            StatusChamadoSeeder::class,
             ChamadoSeeder::class,
         ]);
     }

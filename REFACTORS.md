@@ -13,6 +13,7 @@
 
 -   CRUD Status chamado;
 -   CRUD Prioridades chamado;
+-   Finalizar I18N
 
 # Bugs
 

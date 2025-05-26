@@ -11,6 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
+       Schema::create('status_chamados', function(Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->timestamps();
+        });
+
        Schema::create('categoria_chamados', function (Blueprint $table) {
            $table->id();
            $table->string('name')->unique();
@@ -24,7 +30,7 @@ return new class extends Migration
             $table->text('descricao');
             $table->foreignId('categoria_chamado_id')->constrained()->onDelete('cascade');
             $table->enum('prioridade', ['Baixa', 'Média', 'Alta']);
-            $table->enum('status', ['Aberto', 'Em atendimento', 'Resolvido', 'Fechado'])->default('Aberto');
+            $table->foreignId('status_chamados_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('anexo')->nullable();
             $table->timestamps();
         });
@@ -35,6 +41,7 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('status_chamados');
         Schema::dropIfExists('chamados');
         Schema::dropIfExists('categoria_chamados');
     }
