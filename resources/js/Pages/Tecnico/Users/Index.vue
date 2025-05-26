@@ -97,19 +97,20 @@
                                                                 <SelectLabel
                                                                     >Roles</SelectLabel
                                                                 >
-                                                                <SelectItem
-                                                                    :value="
-                                                                        data
-                                                                            .role
-                                                                            .id
-                                                                    "
+
+                                                                <div
+                                                                    v-for="role of roles"
                                                                 >
-                                                                    {{
-                                                                        data
-                                                                            .role
-                                                                            .name
-                                                                    }}
-                                                                </SelectItem>
+                                                                    <SelectItem
+                                                                        :value="
+                                                                            role.id
+                                                                        "
+                                                                    >
+                                                                        {{
+                                                                            role.name
+                                                                        }}
+                                                                    </SelectItem>
+                                                                </div>
                                                             </SelectGroup>
                                                         </SelectContent>
                                                     </Select>
@@ -168,5 +169,8 @@ function handleEdit(data) {
     editData.put(`/tecnico/users/${data.id}`);
 }
 
-defineProps({ users: { type: Array, required: true } });
+defineProps({
+    users: { type: Array, required: true },
+    roles: { type: Array, required: true },
+});
 </script>

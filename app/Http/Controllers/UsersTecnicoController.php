@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Roles;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -14,7 +15,9 @@ class UsersTecnicoController extends Controller
     public function index()
     {
         $users = User::all();
-        return Inertia::render('Tecnico/Users/Index', \compact('users'));
+        $roles = Roles::all();
+
+        return Inertia::render('Tecnico/Users/Index', \compact('users', 'roles'));
     }
 
     /**
