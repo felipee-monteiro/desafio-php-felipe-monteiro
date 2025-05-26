@@ -109,6 +109,9 @@
 
                                                                     <div
                                                                         v-for="role of roles"
+                                                                        :key="
+                                                                            role.id
+                                                                        "
                                                                     >
                                                                         <SelectItem
                                                                             :value="

@@ -23,6 +23,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::dropIfExists('respostas');
+        Schema::dropIfExists('chamados');
+        // Schema::dropIfExists('users');
         Schema::dropIfExists('roles');
     }
 };
