@@ -29,6 +29,7 @@ export const PT_BR_LABELS = {
     // Auth
     "email": getPTBRI18NValueByKey("E-Mail Address"),
     "login": getPTBRI18NValueByKey("Login"),
+    "logout": getPTBRI18NValueByKey("Log Out"),
     "password": getPTBRI18NValueByKey("Password"),
     "confirm_password": getPTBRI18NValueByKey("Confirm Password"),
     "remember_me": getPTBRI18NValueByKey("Remember Me"),
@@ -50,5 +51,11 @@ export const PT_BR_LABELS = {
     "with": "com",
     "the_female_plural": "as",
     "privacy_policy": "Políticas de privacidade",
-    "reset_password": getPTBRI18NValueByKey("Reset Password")
+    "reset_password": getPTBRI18NValueByKey("Reset Password"),
+
+    //Auth::validate_email
+    "auth.email_verification": getPTBRI18NValueByKey("auth.email_verification"),
+    "auth.resend_verification_email": getPTBRI18NValueByKey("auth.resend_verification_email"),
+    "auth.edit_profile": getPTBRI18NValueByKey("auth.edit_profile"),
+    "auth.verification_link_sended": getPTBRI18NValueByKey("A new verification link has been sent to the email address you provided during registration."),
 };
