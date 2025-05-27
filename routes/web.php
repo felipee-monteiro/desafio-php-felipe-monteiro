@@ -65,7 +65,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resources([
             'categorias' => CategoriaChamadoController::class,
             'users' => UsersTecnicoController::class,
-            'chamados/status/managment' => StatusChamadoController::class
+            'chamados/status/manage' => StatusChamadoController::class
         ], [
             'names' => [
                 'categorias.index' => 'categorias.index',

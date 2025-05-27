@@ -51,7 +51,7 @@
                             >
                                 <Label for="status_edit_name">Nome</Label>
                                 <Input
-                                    v-model="createData.name"
+                                    v-model="editData.name"
                                     id="status_edit_name"
                                 />
                             </form>
@@ -74,10 +74,14 @@
 import { Input } from "@/Components/ui/input";
 import { Label } from "@/Components/ui/label";
 import CrudLayout from "@/Layouts/CrudLayout.vue";
-import useForm from "@/Composables/form";
+import useForm, { globalConfig } from "@/Composables/form";
 import DeleteDialog from "@/Components/DeleteDialog.vue";
 import DialogCreate from "@/Components/DialogCreate.vue";
 import DialogEdit from "@/Components/DialogEdit.vue";
+
+import { router } from "@inertiajs/vue3";
+
+const STATUS_URL = "/tecnico/chamados/status/manage";
 
 defineProps({ status: { type: Array, required: true } });
 
@@ -86,10 +90,18 @@ const createData = useForm({
 });
 
 const editData = useForm({
-    newName: "",
+    name: "",
 });
 
-function handleCreate() {}
-function handleEdit() {}
-function handleDelete() {}
+function handleCreate() {
+    createData.post(STATUS_URL);
+}
+
+function handleEdit(data) {
+    editData.patch(`${STATUS_URL}/${data.id}`);
+}
+
+function handleDelete(id) {
+    router.delete(`${STATUS_URL}/${id}`, globalConfig);
+}
 </script>

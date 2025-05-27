@@ -11,10 +11,9 @@
 
 # Geral
 
--   CRUD Status chamado;
+-   CRUD Status chamado (Em andamento);
 -   CRUD Prioridades chamado;
 -   Finalizar I18N (Feito);
--   Implementar foto de perfil com o jetstream (Em andamento);
 -   Verificação de e-mail (implantar servidor local) (Em andamento);
 
 # Bugs
