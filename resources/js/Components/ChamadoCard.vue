@@ -15,7 +15,6 @@
                     </h1>
                 </div>
 
-
                 <div class="grid gap-4">
                     <div
                         class="bg-white shadow rounded p-4 border border-gray-100 hover:shadow-md transition"
@@ -37,7 +36,8 @@
                                         <span>Status:</span>
                                         <div v-if="isTecnico()">
                                             <select v-model="updateStatus.status_chamados_id" class="p-0 px-2" @change="handleTecnicoUpdateStatus(chamado.id)">
-                                                    <StatusChamadosOptions :status-chamado="statusChamado" :default-selected="chamado.status.id" />
+                                                    <!-- <option value>{{ chamado.status.name }}</option> -->
+                                                    <StatusChamadosOptions :status-chamado="statusChamado" />
                                                 </select>
                                         </div>
                                         <div v-else>

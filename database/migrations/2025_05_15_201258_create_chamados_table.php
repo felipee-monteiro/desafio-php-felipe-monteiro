@@ -29,7 +29,6 @@ return new class extends Migration
             $table->string('titulo');
             $table->text('descricao');
             $table->foreignId('categoria_chamado_id')->constrained()->onDelete('cascade');
-            $table->enum('prioridade', ['Baixa', 'Média', 'Alta']);
             $table->foreignId('status_chamados_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->string('anexo')->nullable();
             $table->timestamps();

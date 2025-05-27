@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategoriaChamadosSeeder::class,
             StatusChamadoSeeder::class,
+            PrioridadeChamadoSeeder::class,
             ChamadoSeeder::class,
         ]);
     }
