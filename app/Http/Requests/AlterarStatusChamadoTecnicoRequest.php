@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\SafeIntengerRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class AlterarStatusChamadoTecnicoRequest extends FormRequest
@@ -22,7 +23,7 @@ class AlterarStatusChamadoTecnicoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'status' => 'required|in:Aberto,Em atendimento,Resolvido,Fechado',
+            'status_chamados_id' => ['required', 'numeric', new SafeIntengerRule, 'exists:status_chamados,id'],
         ];
     }
 }

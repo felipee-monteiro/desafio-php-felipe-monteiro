@@ -1,7 +1,7 @@
 # Técnico
 
 -   Mostrar anexos nos detalhes do chamado (Feito);
--   Alterar Status;
+-   Alterar Status (Feito);
 -   Responder Chamados;
 
 # Colaborador
@@ -13,11 +13,11 @@
 
 -   CRUD Status chamado;
 -   CRUD Prioridades chamado;
--   Finalizar I18N (Feito)
--   Implementar foto de perfil com o jetstream (Em andamento)
--   Verificação de e-mail (implantar servidor local) (Em andamento)
+-   Finalizar I18N (Feito);
+-   Implementar foto de perfil com o jetstream (Em andamento);
+-   Verificação de e-mail (implantar servidor local) (Em andamento);
 
 # Bugs
 
--   Modal de edição de permissões de usuário;
+-   Modal de edição de permissões de usuário (Em andamento);
 -   Campos obrigatórios em atualizar usuários (Feito);

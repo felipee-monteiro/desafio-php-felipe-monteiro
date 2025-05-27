@@ -1,13 +1,17 @@
 <template>
     <option
         :key="status.id"
+        :selected="status.id === defaultSelected"
         :value="status.id"
-        v-for="status of statusChamados"
+        v-for="status in statusChamado"
     >
         {{ status.name }}
     </option>
 </template>
 
 <script setup>
-defineProps({ statusChamados: { type: Array, required: true } });
+defineProps({
+    statusChamado: { type: Array, required: true },
+    defaultSelected: { type: Number, required: false },
+});
 </script>

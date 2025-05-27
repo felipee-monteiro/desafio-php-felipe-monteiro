@@ -49,13 +49,13 @@ class ChamadoTecnicoController extends Controller
 
     public function alterarStatus(AlterarStatusChamadoTecnicoRequest $request, Chamado $chamado)
     {
-        $status = $request->safe()->only('status');
+        $status = $request->input('status_chamados_id');
 
-        $chamado->update([
-            'status' => $status,
+        $chamado->updateOrFail([
+            'status_chamados_id' => $status,
         ]);
 
-        return back()->with('success', 'Status atualizado.');
+        return back()->with('success', 'Status atualizado com sucesso.');
     }
 }
 

@@ -25,7 +25,7 @@ trait ShowChamado
         ];
 
         if (auth()->user()->isTecnico()) {
-            $componentData['statusChamados'] = StatusChamado::all();
+            $componentData['statusChamado'] = StatusChamado::all();
         }
 
         return Inertia::render('Chamados/Show', $componentData);
