@@ -5,42 +5,24 @@
         :data="categorias"
     >
         <template #createButton>
-            <Dialog
-                title="Criar Categoria"
-                decription="Crie uma categoria para os chamados"
+            <CreateDialog
+                buttonTitle="Criar Categoria"
+                form="create.submit"
+                :dialog="{
+                    title: 'Criar Categoria',
+                    description: 'Crie uma categoria para os chamados',
+                }"
             >
-                <template #trigger>
-                    <button
-                        type="button"
-                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
+                <div class="my-2">
+                    <form
+                        id="create.submit"
+                        @submit.prevent="handleCreate(data)"
                     >
-                        Nova Categoria
-                    </button>
-                </template>
-                <template #default>
-                    <div class="my-2">
-                        <form
-                            id="create.submit"
-                            @submit.prevent="handleCreate(data)"
-                        >
-                            <Label for="category_name">Nome</Label>
-                            <Input
-                                v-model="createData.name"
-                                id="category_name"
-                            />
-                        </form>
-                    </div>
-                </template>
-                <template #footer>
-                    <button
-                        type="submit"
-                        form="create.submit"
-                        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
-                    >
-                        Criar
-                    </button>
-                </template>
-            </Dialog>
+                        <Label for="category_name">Nome</Label>
+                        <Input v-model="createData.name" id="category_name" />
+                    </form>
+                </div>
+            </CreateDialog>
         </template>
         <template #default="{ data }">
             <div class="flex justify-between items-center">
@@ -54,76 +36,33 @@
                     </p>
                 </div>
                 <div class="flex gap-2">
-                    <!-- Edit dialog -->
-                    <Dialog
-                        :title="`Editar Categoria - ${data.name}`"
-                        decription="Edite a categoria dos chamados"
+                    <DialogEdit
+                        :dialog="{
+                            title: 'Editar categoria - ' + data.name,
+                            description:
+                                'Edite a categoria de acordo com os campos abaixo',
+                        }"
+                        form="edit.submit"
                     >
-                        <template #trigger>
-                            <button
-                                class="text-sm text-blue-600 hover:underline"
+                        <div class="my-2">
+                            <form
+                                id="edit.submit"
+                                @submit.prevent="handleEdit(data)"
                             >
-                                Editar
-                            </button>
-                        </template>
-                        <template #default>
-                            <div class="my-2">
-                                <form
-                                    id="edit.submit"
-                                    @submit.prevent="handleEdit(data)"
-                                >
-                                    <Label for="category_name">Nome</Label>
-                                    <Input
-                                        v-model="editData.newName"
-                                        id="category_name"
-                                    />
-                                </form>
-                            </div>
-                        </template>
-                        <template #footer>
-                            <button
-                                type="submit"
-                                form="edit.submit"
-                                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
-                            >
-                                Salvar
-                            </button>
-                        </template>
-                    </Dialog>
+                                <Label for="category_name">Nome</Label>
+                                <Input
+                                    v-model="editData.newName"
+                                    id="category_name"
+                                />
+                            </form>
+                        </div>
+                    </DialogEdit>
 
-                    <!-- Delete dialog -->
-                    <Dialog
-                        title="Excluir Categoria ?"
-                        decription="Todos os chamados com esta categoria serão igualmente excluídos."
-                    >
-                        <template #trigger>
-                            <button
-                                type="button"
-                                class="text-sm text-red-600 hover:underline"
-                            >
-                                Excluir
-                            </button>
-                        </template>
-
-                        <template #footer>
-                            <DialogClose as-child>
-                                <button
-                                    type="button"
-                                    class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded shadow"
-                                >
-                                    Cancelar
-                                </button>
-                            </DialogClose>
-                            <button
-                                type="submit"
-                                form="edit.submit"
-                                @click="handleDelete(data.id)"
-                                class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded shadow"
-                            >
-                                Sim, Excluir
-                            </button>
-                        </template>
-                    </Dialog>
+                    <DeleteDialog
+                        :handle-delete="handleDelete"
+                        :id="data.id"
+                        :type="`a categoria ${data.name}`"
+                    />
                 </div>
             </div>
         </template>
@@ -131,14 +70,15 @@
 </template>
 
 <script setup>
-import Dialog from "@/Components/Dialog.vue";
 import { Input } from "@/Components/ui/input";
 import { Label } from "@/Components/ui/label";
 import CrudLayout from "@/Layouts/CrudLayout.vue";
 import { rmStringSpace } from "@/utils";
 import { router } from "@inertiajs/vue3";
 import useForm, { globalConfig } from "@/Composables/form.js";
-import { DialogClose } from "@/Components/ui/dialog";
+import DeleteDialog from "@/Components/DeleteDialog.vue";
+import DialogEdit from "./DialogEdit.vue";
+import CreateDialog from "@/Components/DialogCreate.vue";
 
 const editData = useForm({
     newName: "",

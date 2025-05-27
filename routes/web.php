@@ -5,6 +5,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ChamadoController;
+use App\Http\Controllers\StatusChamadoController;
 use App\Http\Controllers\Tecnico\ChamadoTecnicoController;
 use App\Http\Controllers\UsersTecnicoController;
 
@@ -63,7 +64,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::resources([
             'categorias' => CategoriaChamadoController::class,
-            'users' => UsersTecnicoController::class
+            'users' => UsersTecnicoController::class,
+            'chamados/status/managment' => StatusChamadoController::class
         ], [
             'names' => [
                 'categorias.index' => 'categorias.index',
