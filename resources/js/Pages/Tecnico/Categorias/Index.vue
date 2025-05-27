@@ -49,10 +49,10 @@
                                 id="edit.submit"
                                 @submit.prevent="handleEdit(data)"
                             >
-                                <Label for="category_name">Nome</Label>
+                                <Label for="status_edit_name">Nome</Label>
                                 <Input
                                     v-model="editData.newName"
-                                    id="category_name"
+                                    id="status_edit_name"
                                 />
                             </form>
                         </div>
@@ -77,7 +77,7 @@ import { rmStringSpace } from "@/utils";
 import { router } from "@inertiajs/vue3";
 import useForm, { globalConfig } from "@/Composables/form.js";
 import DeleteDialog from "@/Components/DeleteDialog.vue";
-import DialogEdit from "./DialogEdit.vue";
+import DialogEdit from "@/Components/DialogEdit.vue";
 import CreateDialog from "@/Components/DialogCreate.vue";
 
 const editData = useForm({
