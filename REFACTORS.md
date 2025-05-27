@@ -11,10 +11,9 @@
 
 # Geral
 
--   CRUD Status chamado (Em andamento);
--   CRUD Prioridades chamado;
+-   CRUD Status chamado (Feito);
+-   CRUD Prioridades chamado (Feito);
 -   Finalizar I18N (Feito);
--   Verificação de e-mail (implantar servidor local) (Em andamento);
 
 # Bugs
 
