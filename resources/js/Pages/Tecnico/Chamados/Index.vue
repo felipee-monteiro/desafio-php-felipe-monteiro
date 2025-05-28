@@ -9,9 +9,20 @@
                 </h1>
                 <div class="flex gap-4">
                     <select
+                        v-model="exportData.format"
+                        @change="exportChamadosAsFiles"
+                        class="border py-2 rounded"
+                    >
+                        <option value>Exportar como</option>
+                        <option value="pdf">PDF</option>
+                        <option value="excel">Excel</option>
+                        <option value="csv">CSV</option>
+                    </select>
+
+                    <select
                         v-model="filters.status"
                         @change="applyFilters"
-                        class="border px-3 py-2 rounded"
+                        class="border py-2 rounded"
                     >
                         <option value>Todos os Status</option>
                         <StatusChamadosOptions :status-chamado="status" />
@@ -20,7 +31,7 @@
                     <select
                         v-model="filters.prioridade"
                         @change="applyFilters"
-                        class="border px-3 py-2 rounded"
+                        class="border py-2 rounded"
                     >
                         <option value>Todas as Prioridades</option>
                         <StatusPriorities :priorities="prioridades" />
@@ -73,20 +84,49 @@
 <script setup>
 import StatusChamadosOptions from "@/Components/StatusChamadosOptions.vue";
 import StatusPriorities from "@/Components/StatusPriorities.vue";
+import { globalConfig } from "@/Composables/form";
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { router, Link } from "@inertiajs/vue3";
+import useForm from "@/Composables/form";
 import { reactive } from "vue";
+import { isValidString } from "@/utils";
 
-defineProps({ chamados: Array, status: Array, prioridades: Array });
+const { chamados } = defineProps({
+    chamados: Array,
+    status: Array,
+    prioridades: Array,
+});
 
 const filters = reactive({
     status: "",
     prioridade: "",
 });
 
+const exportData = useForm({
+    format: "",
+});
+
 function applyFilters() {
     router.get("/tecnico/chamados", filters, {
+        ...globalConfig,
         preserveState: true,
     });
+}
+
+function exportChamadosAsFiles() {
+    if (isValidString(exportData.format)) {
+        router.post(
+            "/tecnico/chamados/export",
+            {
+                format: exportData.format,
+                data: chamados,
+            },
+            {
+                onSuccess: function () {
+                    window.history.back();
+                },
+            }
+        );
+    }
 }
 </script>

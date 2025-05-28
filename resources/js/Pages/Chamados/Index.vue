@@ -7,9 +7,19 @@
         <template #createButton>
             <div class="flex gap-4">
                 <select
+                    v-model="exportData.format"
+                    @change="exportChamadosAsFile"
+                    class="border py-2 rounded"
+                >
+                    <option value>Exportar como</option>
+                    <option value="pdf">PDF</option>
+                    <option value="excel">Excel</option>
+                    <option value="csv">CSV</option>
+                </select>
+                <select
                     v-model="filters.status"
                     @change="applyFilters"
-                    class="border px-3 py-2 rounded"
+                    class="border py-2 rounded"
                 >
                     <option value>Todos os Status</option>
                     <StatusChamadosOptions :status-chamado="status" />
@@ -18,7 +28,7 @@
                 <select
                     v-model="filters.prioridade"
                     @change="applyFilters"
-                    class="border px-3 py-2 rounded"
+                    class="border py-2 rounded"
                 >
                     <option value>Todas as Prioridades</option>
                     <StatusPriorities :priorities="prioridades" />
@@ -64,8 +74,18 @@ import StatusPriorities from "@/Components/StatusPriorities.vue";
 import CrudLayout from "@/Layouts/CrudLayout.vue";
 import { Link, router } from "@inertiajs/vue3";
 import { reactive } from "vue";
+import useForm from "@/Composables/form";
+import { isValidString } from "@/utils";
 
-defineProps({ chamados: Array, status: Array, prioridades: Array });
+const { chamados } = defineProps({
+    chamados: Array,
+    status: Array,
+    prioridades: Array,
+});
+
+const exportData = useForm({
+    format: "",
+});
 
 const filters = reactive({
     status: "",
@@ -76,5 +96,22 @@ function applyFilters() {
     router.get("/chamados", filters, {
         preserveState: true,
     });
+}
+
+function exportChamadosAsFile() {
+    if (isValidString(exportData.format)) {
+        router.post(
+            "/colaborador/chamados/export",
+            {
+                format: exportData.format,
+                data: chamados,
+            },
+            {
+                onSuccess: function () {
+                    window.history.back();
+                },
+            }
+        );
+    }
 }
 </script>

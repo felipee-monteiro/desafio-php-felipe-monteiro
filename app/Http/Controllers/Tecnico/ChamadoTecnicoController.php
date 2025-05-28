@@ -30,10 +30,6 @@ class ChamadoTecnicoController extends Controller
             if (null !== $data['prioridade']) {
                 $query->where('prioridade_chamado_id', $data['prioridade']);
             }
-
-            if (null !== $data['user_id']) {
-                $query->where('user_id', $data['user_id']);
-            }
         }
 
         $chamados = $query->latest()->get();

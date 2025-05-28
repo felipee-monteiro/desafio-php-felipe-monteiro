@@ -85,6 +85,10 @@ class User extends Authenticatable
         return $this->role->name === 'tecnico';
     }
 
+    public function isTecnicoOrColaborador(): bool {
+        return $this->isTecnico() or $this->isColaborador();
+    }
+
     public function respostas(): HasMany {
         return $this->hasMany(Resposta::class);
     }

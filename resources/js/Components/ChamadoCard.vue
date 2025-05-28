@@ -36,9 +36,9 @@
                                         <span>Status:</span>
                                         <div v-if="isTecnico()">
                                             <select v-model="updateStatus.status_chamados_id" class="p-0 px-2" @change="handleTecnicoUpdateStatus(chamado.id)">
-                                                    <!-- <option value>{{ chamado.status.name }}</option> -->
+                                                    <option value="">{{ chamado.status.name }}</option>
                                                     <StatusChamadosOptions :status-chamado="statusChamado" />
-                                                </select>
+                                            </select>
                                         </div>
                                         <div v-else>
                                             {{ chamado.status.name }}
@@ -94,7 +94,7 @@ import StatusChamadosOptions from "./StatusChamadosOptions.vue";
 
 const page = usePage();
 const updateStatus = useForm({
-    status_chamados_id: 0
+    status_chamados_id: ""
 });
 
 const {
@@ -109,9 +109,7 @@ function isTecnico() {
 }
 
 function handleTecnicoUpdateStatus(chamadoId) {
-    if (isTecnico()) {
-        updateStatus.patch(`/tecnico/chamados/${chamadoId}/status`);
-    }
+    updateStatus.patch(`/tecnico/chamados/${chamadoId}/status`);
 }
 
 defineProps({

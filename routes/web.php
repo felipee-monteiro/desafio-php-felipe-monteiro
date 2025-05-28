@@ -1,5 +1,8 @@
 <?php
 
+use App\Factories\Document\ConcreteCreator\CsvChamadoCreator;
+use App\Factories\Document\ConcreteCreator\PDFChamadoCreator;
+use App\Factories\Document\ConcreteCreator\ExcelChamadoCreator;
 use App\Http\Controllers\CategoriaChamadoController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +12,7 @@ use App\Http\Controllers\PrioridadeChamadoController;
 use App\Http\Controllers\StatusChamadoController;
 use App\Http\Controllers\Tecnico\ChamadoTecnicoController;
 use App\Http\Controllers\UsersTecnicoController;
+use App\Http\Requests\FilterChamadosRequest;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -45,6 +49,39 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return redirect()->route('chamados.index');
     })->name('dashboard');
 
+    function registerExportRoute(string $path = '/colaborador/chamados/export') {
+         Route::post($path, function(FilterChamadosRequest $request) {
+            $chamados = $request->input('data');
+            $format = $request->input('format');
+
+            $document = match ($format) {
+                'pdf' => [
+                    'class' => new pdfchamadocreator,
+                    'mime' => 'application/pdf',
+                ],
+                'excel' => [
+                    'class' => new excelchamadocreator,
+                    'mime' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                ],
+                'csv' => [
+                    'class' => new CsvChamadoCreator,
+                    'mime' => 'text/csv'
+                ],
+                default => throw new \RuntimeException('Formato não reconhecido')
+            };
+
+            $fileProcessor = $document['class']->createDocument();
+            $rawFile = $fileProcessor->process(\compact('chamados'));
+
+            $componentProps = [
+                'rawFile' => base64_encode($rawFile),
+                'fileMimeType' => $document['mime'],
+            ];
+
+            return Inertia::render("FilePreview", $componentProps);
+        });
+    }
+
     /**
      * Rotas do COLABORADOR
      */
@@ -52,6 +89,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resources([
             'chamados' => ChamadoController::class,
         ]);
+        registerExportRoute();
     });
 
     /**
@@ -63,17 +101,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::post('chamados/{chamado}/resposta', [ChamadoTecnicoController::class, 'responder'])->name('chamados.responder');
         Route::patch('chamados/{chamado}/status', [ChamadoTecnicoController::class, 'alterarStatus'])->name('chamados.status');
 
+        registerExportRoute('/chamados/export');
+
         Route::resources([
             'categorias' => CategoriaChamadoController::class,
             'users' => UsersTecnicoController::class,
             'chamados/status/manage' => StatusChamadoController::class,
             'chamados/prioridades/manage' => PrioridadeChamadoController::class,
-        ], [
-            'names' => [
-                'categorias.index' => 'categorias.index',
-                'categorias.update' => 'categorias.update',
-                'users.index' => 'users.index'
-            ]
         ]);
     });
 });
