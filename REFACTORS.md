@@ -6,7 +6,7 @@
 
 # Colaborador
 
--   Adicionar filtros;
+-   Adicionar filtros (Feito);
 -   Renderizar respostas do chamado;
 
 # Geral

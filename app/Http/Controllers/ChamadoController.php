@@ -5,22 +5,41 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreChamadoRequest;
 use App\Models\CategoriaChamado;
 use App\Composables\ShowChamado;
+use App\Http\Requests\IndexChamadoRequest;
+use App\Models\Chamado;
+use App\Models\PrioridadeChamado;
+use App\Models\StatusChamado;
 use Inertia\Inertia;
 
 class ChamadoController extends Controller
 {
     use ShowChamado;
 
-    public function index()
+    public function index(IndexChamadoRequest $request)
     {
-        $chamados = auth()->user()->chamados()->latest()->get();
+        $data = $request->validated();
+        $query = Chamado::query();
 
-        return Inertia::render('Chamados/Index', \compact('chamados'));
+        if (!empty($data)) {
+            if (null !== $data["status"]) {
+                $query->where('status_chamados_id', $data['status']);
+            }
+
+            if (null !== $data['prioridade']) {
+                $query->where('prioridade_chamado_id', $data['prioridade']);
+            }
+        }
+
+        $chamados = $query->where('user_id', auth()->user()->id)->latest()->get();
+        $status = StatusChamado::all();
+        $prioridades = PrioridadeChamado::all();
+
+        return Inertia::render('Chamados/Index', \compact('chamados', 'status', 'prioridades'));
     }
 
     public function create()
     {
-        $categoriasChamado = CategoriaChamado::all()->toArray();
+        $categoriasChamado = CategoriaChamado::all();
         return Inertia::render('Chamados/Create', \compact("categoriasChamado"));
     }
 

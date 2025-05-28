@@ -8,6 +8,8 @@ use App\Http\Requests\AlterarStatusChamadoTecnicoRequest;
 use App\Http\Requests\IndexChamadoTecnicoRequest;
 use App\Http\Requests\ResponderChamadoTecnicoRequest;
 use App\Models\Chamado;
+use App\Models\PrioridadeChamado;
+use App\Models\StatusChamado;
 use Inertia\Inertia;
 
 class ChamadoTecnicoController extends Controller
@@ -22,17 +24,23 @@ class ChamadoTecnicoController extends Controller
 
         if (!empty($data)) {
             if (null !== $data["status"]) {
-                $query->where('status', $data['status']);
+                $query->where('status_chamados_id', $data['status']);
             }
 
             if (null !== $data['prioridade']) {
-                $query->where('prioridade', $data['prioridade']);
+                $query->where('prioridade_chamado_id', $data['prioridade']);
+            }
+
+            if (null !== $data['user_id']) {
+                $query->where('user_id', $data['user_id']);
             }
         }
 
         $chamados = $query->latest()->get();
+        $status = StatusChamado::all();
+        $prioridades = PrioridadeChamado::all();
 
-        return Inertia::render('Tecnico/Chamados/Index', \compact('chamados'));
+        return Inertia::render('Tecnico/Chamados/Index', \compact('chamados', 'status', 'prioridades'));
     }
 
     public function responder(ResponderChamadoTecnicoRequest $request, Chamado $chamado)

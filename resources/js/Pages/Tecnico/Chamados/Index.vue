@@ -14,10 +14,7 @@
                         class="border px-3 py-2 rounded"
                     >
                         <option value>Todos os Status</option>
-                        <option>Aberto</option>
-                        <option>Em atendimento</option>
-                        <option>Resolvido</option>
-                        <option>Fechado</option>
+                        <StatusChamadosOptions :status-chamado="status" />
                     </select>
 
                     <select
@@ -26,9 +23,7 @@
                         class="border px-3 py-2 rounded"
                     >
                         <option value>Todas as Prioridades</option>
-                        <option>Baixa</option>
-                        <option>Média</option>
-                        <option>Alta</option>
+                        <StatusPriorities :priorities="prioridades" />
                     </select>
                 </div>
             </div>
@@ -54,7 +49,7 @@
                             <p class="text-sm text-gray-500 mt-1">
                                 Categoria: {{ chamado.categoria.name }} |
                                 Prioridade:
-                                {{ chamado.prioridade }}
+                                {{ chamado.prioridade.name }}
                             </p>
                             <p class="text-sm font-medium mt-1">
                                 Status:
@@ -76,11 +71,13 @@
 </template>
 
 <script setup>
+import StatusChamadosOptions from "@/Components/StatusChamadosOptions.vue";
+import StatusPriorities from "@/Components/StatusPriorities.vue";
 import AppLayout from "@/Layouts/AppLayout.vue";
 import { router, Link } from "@inertiajs/vue3";
 import { reactive } from "vue";
 
-defineProps({ chamados: Array });
+defineProps({ chamados: Array, status: Array, prioridades: Array });
 
 const filters = reactive({
     status: "",

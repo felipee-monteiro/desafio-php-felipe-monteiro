@@ -25,7 +25,7 @@ class Chamado extends Model
     ];
 
     protected $hidden = ['categoria_chamado_id'];
-    protected $with = ['categoria', 'responsavel', 'status'];
+    protected $with = ['categoria', 'responsavel', 'status', 'prioridade'];
 
     public function respostas(): HasMany {
         return $this->hasMany(Resposta::class);
@@ -41,5 +41,9 @@ class Chamado extends Model
 
     public function status(): HasOne {
         return $this->hasOne(StatusChamado::class, 'id', 'status_chamados_id');
+    }
+
+    public function prioridade(): HasOne {
+        return $this->hasOne(PrioridadeChamado::class, 'id', 'prioridade_chamado_id');
     }
 }

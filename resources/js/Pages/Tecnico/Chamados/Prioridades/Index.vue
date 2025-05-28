@@ -82,7 +82,7 @@ import DialogEdit from "@/Components/DialogEdit.vue";
 
 import { router } from "@inertiajs/vue3";
 
-const STATUS_URL = "/tecnico/chamados/prioridades/manage";
+const PRIORITY_URL = "/tecnico/chamados/prioridades/manage";
 
 defineProps({ prioridadesChamados: { type: Array, required: true } });
 
@@ -95,14 +95,14 @@ const editData = useForm({
 });
 
 function handleCreate() {
-    createData.post(STATUS_URL);
+    createData.post(PRIORITY_URL);
 }
 
 function handleEdit(data) {
-    editData.patch(`${STATUS_URL}/${data.id}`);
+    editData.patch(`${PRIORITY_URL}/${data.id}`);
 }
 
 function handleDelete(id) {
-    router.delete(`${STATUS_URL}/${id}`, globalConfig);
+    router.delete(`${PRIORITY_URL}/${id}`, globalConfig);
 }
 </script>

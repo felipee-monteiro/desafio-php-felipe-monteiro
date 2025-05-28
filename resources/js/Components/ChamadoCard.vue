@@ -26,7 +26,7 @@
                                 </h2>
                                 <p class="text-sm text-gray-500">
                                     Categoria: {{ chamado.categoria.name }} |
-                                    Prioridade: {{ chamado.prioridade }} |
+                                    Prioridade: {{ chamado.prioridade.name }} |
                                     Criado em: {{ chamado.created_at }} |
                                     Atualizado em:
                                     {{ chamado.updated_at }}

@@ -5,12 +5,31 @@
         :data="chamados"
     >
         <template #createButton>
-            <Link
-                href="/chamados/create"
-                class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
-            >
-                Novo Chamado
-            </Link>
+            <div class="flex gap-4">
+                <select
+                    v-model="filters.status"
+                    @change="applyFilters"
+                    class="border px-3 py-2 rounded"
+                >
+                    <option value>Todos os Status</option>
+                    <StatusChamadosOptions :status-chamado="status" />
+                </select>
+
+                <select
+                    v-model="filters.prioridade"
+                    @change="applyFilters"
+                    class="border px-3 py-2 rounded"
+                >
+                    <option value>Todas as Prioridades</option>
+                    <StatusPriorities :priorities="prioridades" />
+                </select>
+                <Link
+                    href="/chamados/create"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
+                >
+                    Novo Chamado
+                </Link>
+            </div>
         </template>
         <template #default="{ data }">
             <div class="flex justify-between items-center">
@@ -20,7 +39,7 @@
                     </h2>
                     <p class="text-sm text-gray-500">
                         Categoria: {{ data.categoria.name }} | Prioridade:
-                        {{ data.prioridade }}
+                        {{ data.prioridade.name }}
                     </p>
                     <p class="text-sm font-medium mt-1">
                         Status:
@@ -40,8 +59,22 @@
 </template>
 
 <script setup>
+import StatusChamadosOptions from "@/Components/StatusChamadosOptions.vue";
+import StatusPriorities from "@/Components/StatusPriorities.vue";
 import CrudLayout from "@/Layouts/CrudLayout.vue";
-import { Link } from "@inertiajs/vue3";
+import { Link, router } from "@inertiajs/vue3";
+import { reactive } from "vue";
 
-defineProps({ chamados: Array });
+defineProps({ chamados: Array, status: Array, prioridades: Array });
+
+const filters = reactive({
+    status: "",
+    prioridade: "",
+});
+
+function applyFilters() {
+    router.get("/chamados", filters, {
+        preserveState: true,
+    });
+}
 </script>
