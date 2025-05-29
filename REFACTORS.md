@@ -17,5 +17,5 @@
 
 # Bugs
 
--   Modal de edição de permissões de usuário (Em andamento);
+-   Modal de edição de permissões de usuário (Feito);
 -   Campos obrigatórios em atualizar usuários (Feito);
