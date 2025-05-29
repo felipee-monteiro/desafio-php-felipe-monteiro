@@ -17,7 +17,7 @@ Este projeto utiliza o framework Laravel. Abaixo estão os passos completos para
 ### 1. Clone o repositório 😎
 
 ```
-git clone https://git.engeselt.com.br/wesley.silva/desafio-php.git
+git clone https://github.com/felipee-monteiro/desafio-php-felipe-monteiro.git
 ```
 
 ### 2. Copie o arquivo .env 📂
