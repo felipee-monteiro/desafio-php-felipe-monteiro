@@ -40,12 +40,16 @@ class ChamadoController extends Controller
     public function create()
     {
         $categoriasChamado = CategoriaChamado::all();
-        return Inertia::render('Chamados/Create', \compact("categoriasChamado"));
+        $prioridades = PrioridadeChamado::all();
+
+        return Inertia::render('Chamados/Create', \compact("categoriasChamado", "prioridades"));
     }
 
     public function store(StoreChamadoRequest $request)
     {
         $data = $request->validated();
+
+        // dd($data);
 
         if ($request->hasFile('anexo')) {
             $data['anexo'] = $request->file('anexo')->store('anexos', 'public');

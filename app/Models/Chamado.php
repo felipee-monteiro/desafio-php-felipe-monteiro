@@ -19,7 +19,7 @@ class Chamado extends Model
         'descricao',
         'status_chamados_id',
         'categoria_chamado_id',
-        'prioridade',
+        'prioridade_chamado_id',
         'status',
         'anexo',
     ];

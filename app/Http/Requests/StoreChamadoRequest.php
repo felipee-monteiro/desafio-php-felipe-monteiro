@@ -27,7 +27,7 @@ class StoreChamadoRequest extends FormRequest
             'descricao' => 'required',
             'status_chamados_id' => ['required', 'numeric', new SafeIntengerRule, 'exists:status_chamados,id'],
             'categoria_chamado_id' => ['required', 'numeric', new SafeIntengerRule, 'exists:categoria_chamados,id'],
-            'prioridade' => 'required|in:Baixa,Média,Alta',
+            'prioridade_chamado_id' => 'required|numeric|exists:prioridade_chamados,id',
             'anexo' => 'nullable|file|max:2048',
         ];
     }
