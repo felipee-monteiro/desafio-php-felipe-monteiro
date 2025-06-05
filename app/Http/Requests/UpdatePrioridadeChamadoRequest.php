@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -17,12 +19,12 @@ class UpdatePrioridadeChamadoRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|list<mixed>|string>
      */
     public function rules(): array
     {
         return [
-             'name' => 'required|string|unique:prioridade_chamados,name|max:255'
+            'name' => 'required|string|unique:prioridade_chamados,name|max:255',
         ];
     }
 }

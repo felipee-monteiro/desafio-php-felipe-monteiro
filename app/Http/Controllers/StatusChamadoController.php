@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreStatusChamadoRequest;
@@ -17,6 +19,7 @@ class StatusChamadoController extends Controller
     public function index()
     {
         $status = StatusChamado::all();
+
         return Inertia::render('Tecnico/Chamados/Status/Index', \compact('status'));
     }
 
@@ -50,7 +53,7 @@ class StatusChamadoController extends Controller
     public function destroy(string $id)
     {
         $statusID = Validator::make(['id' => $id], [
-            'id' => ['numeric', 'required', new SafeIntengerRule, 'exists:status_chamados,id']
+            'id' => ['numeric', 'required', new SafeIntengerRule(), 'exists:status_chamados,id'],
         ])->validate();
 
         $isDeleted = StatusChamado::findOrFail($statusID['id'])->delete();

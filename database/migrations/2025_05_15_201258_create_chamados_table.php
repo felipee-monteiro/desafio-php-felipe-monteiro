@@ -1,29 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class() extends Migration {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-       Schema::create('status_chamados', function(Blueprint $table) {
+        Schema::create('status_chamados', static function (Blueprint $table): void {
             $table->id();
             $table->string('name')->unique();
             $table->timestamps();
         });
 
-       Schema::create('categoria_chamados', function (Blueprint $table) {
-           $table->id();
-           $table->string('name')->unique();
-           $table->timestamps();
-       });
+        Schema::create('categoria_chamados', static function (Blueprint $table): void {
+            $table->id();
+            $table->string('name')->unique();
+            $table->timestamps();
+        });
 
-        Schema::create('chamados', function (Blueprint $table) {
+        Schema::create('chamados', static function (Blueprint $table): void {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->string('titulo');

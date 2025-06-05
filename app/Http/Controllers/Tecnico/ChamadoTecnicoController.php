@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Tecnico;
 
 use App\Composables\ShowChamado;
@@ -23,7 +25,7 @@ class ChamadoTecnicoController extends Controller
         $data = $request->validated();
 
         if (!empty($data)) {
-            if (null !== $data["status"]) {
+            if (null !== $data['status']) {
                 $query->where('status_chamados_id', $data['status']);
             }
 
@@ -32,8 +34,8 @@ class ChamadoTecnicoController extends Controller
             }
         }
 
-        $chamados = $query->latest()->get();
-        $status = StatusChamado::all();
+        $chamados    = $query->latest()->get();
+        $status      = StatusChamado::all();
         $prioridades = PrioridadeChamado::all();
 
         return Inertia::render('Tecnico/Chamados/Index', \compact('chamados', 'status', 'prioridades'));
@@ -44,7 +46,7 @@ class ChamadoTecnicoController extends Controller
         $mensagem = $request->safe()->only('mensagem');
 
         $chamado->respostas()->create([
-            'user_id' => auth()->id(),
+            'user_id'  => auth()->id(),
             'mensagem' => $mensagem,
         ]);
 
@@ -62,4 +64,3 @@ class ChamadoTecnicoController extends Controller
         return back()->with('success', 'Status atualizado com sucesso.');
     }
 }
-

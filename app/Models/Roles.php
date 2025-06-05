@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -7,10 +9,11 @@ use Illuminate\Database\Eloquent\Model;
 class Roles extends Model
 {
     protected $fillable = [
-        'name'
+        'name',
     ];
 
-    public function users() {
+    public function users()
+    {
         return $this->belongsTo(User::class);
     }
 }

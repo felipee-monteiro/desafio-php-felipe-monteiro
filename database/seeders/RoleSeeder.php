@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\Roles;
@@ -17,8 +19,8 @@ class RoleSeeder extends Seeder
                 'name' => 'colaborador',
             ],
             [
-                'name' => 'tecnico'
-            ]
+                'name' => 'tecnico',
+            ],
         ];
 
         foreach ($roles as $role) {

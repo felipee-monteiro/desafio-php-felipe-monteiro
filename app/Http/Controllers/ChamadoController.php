@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreChamadoRequest;
-use App\Models\CategoriaChamado;
 use App\Composables\ShowChamado;
 use App\Http\Requests\IndexChamadoRequest;
+use App\Http\Requests\StoreChamadoRequest;
+use App\Models\CategoriaChamado;
 use App\Models\Chamado;
 use App\Models\PrioridadeChamado;
 use App\Models\StatusChamado;
@@ -17,11 +19,11 @@ class ChamadoController extends Controller
 
     public function index(IndexChamadoRequest $request)
     {
-        $data = $request->validated();
+        $data  = $request->validated();
         $query = Chamado::query();
 
         if (!empty($data)) {
-            if (null !== $data["status"]) {
+            if (null !== $data['status']) {
                 $query->where('status_chamados_id', $data['status']);
             }
 
@@ -30,8 +32,8 @@ class ChamadoController extends Controller
             }
         }
 
-        $chamados = $query->where('user_id', auth()->user()->id)->latest()->get();
-        $status = StatusChamado::all();
+        $chamados    = $query->where('user_id', auth()->user()->id)->latest()->get();
+        $status      = StatusChamado::all();
         $prioridades = PrioridadeChamado::all();
 
         return Inertia::render('Chamados/Index', \compact('chamados', 'status', 'prioridades'));
@@ -40,9 +42,9 @@ class ChamadoController extends Controller
     public function create()
     {
         $categoriasChamado = CategoriaChamado::all();
-        $prioridades = PrioridadeChamado::all();
+        $prioridades       = PrioridadeChamado::all();
 
-        return Inertia::render('Chamados/Create', \compact("categoriasChamado", "prioridades"));
+        return Inertia::render('Chamados/Create', \compact('categoriasChamado', 'prioridades'));
     }
 
     public function store(StoreChamadoRequest $request)
@@ -60,4 +62,3 @@ class ChamadoController extends Controller
         return redirect()->route('chamados.index')->with('success', 'Chamado criado com sucesso.');
     }
 }
-

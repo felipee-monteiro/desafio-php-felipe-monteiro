@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests;
 
 use App\Rules\SafeIntengerRule;
@@ -18,24 +20,24 @@ class StoreChamadoRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|list<mixed>|string>
      */
     public function rules(): array
     {
         return [
-            'titulo' => 'required|string|max:255',
-            'descricao' => 'required',
-            'status_chamados_id' => ['required', 'numeric', new SafeIntengerRule, 'exists:status_chamados,id'],
-            'categoria_chamado_id' => ['required', 'numeric', new SafeIntengerRule, 'exists:categoria_chamados,id'],
+            'titulo'                => 'required|string|max:255',
+            'descricao'             => 'required',
+            'status_chamados_id'    => ['required', 'numeric', new SafeIntengerRule(), 'exists:status_chamados,id'],
+            'categoria_chamado_id'  => ['required', 'numeric', new SafeIntengerRule(), 'exists:categoria_chamados,id'],
             'prioridade_chamado_id' => 'required|numeric|exists:prioridade_chamados,id',
-            'anexo' => 'nullable|file|max:2048',
+            'anexo'                 => 'nullable|file|max:2048',
         ];
     }
 
     public function attributes(): array
     {
         return [
-            'categoria_chamado_id' => "categoria"
+            'categoria_chamado_id' => 'categoria',
         ];
     }
 }

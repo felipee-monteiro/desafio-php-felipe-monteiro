@@ -1,17 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class() extends Migration {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::table('chamados', function(Blueprint $table) {
+        Schema::table('chamados', static function (Blueprint $table): void {
             $table->foreignId('prioridade_chamado_id')->constrained()->onDelete('cascade');
         });
     }
@@ -21,6 +22,5 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
     }
 };

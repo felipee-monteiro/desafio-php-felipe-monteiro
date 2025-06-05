@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePrioridadeChamadoRequest;
@@ -11,13 +13,13 @@ use Inertia\Inertia;
 
 class PrioridadeChamadoController extends Controller
 {
-
-     /**
+    /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $prioridadesChamados = PrioridadeChamado::all();
+
         return Inertia::render('Tecnico/Chamados/Prioridades/Index', \compact('prioridadesChamados'));
     }
 
@@ -51,7 +53,7 @@ class PrioridadeChamadoController extends Controller
     public function destroy(string $id)
     {
         $statusID = Validator::make(['id' => $id], [
-            'id' => ['numeric', 'required', new SafeIntengerRule, 'exists:prioridade_chamados,id']
+            'id' => ['numeric', 'required', new SafeIntengerRule(), 'exists:prioridade_chamados,id'],
         ])->validate();
 
         $isDeleted = PrioridadeChamado::findOrFail($statusID['id'])->delete();

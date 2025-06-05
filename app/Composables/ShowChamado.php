@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Composables;
 
 use App\Models\Chamado;
@@ -13,7 +15,7 @@ trait ShowChamado
     public function show(string $chamadoId)
     {
         $validator = Validator::make(['chamado_id' => $chamadoId], [
-            'chamado_id' => ['required', 'numeric', new SafeIntengerRule]
+            'chamado_id' => ['required', 'numeric', new SafeIntengerRule()],
         ]);
 
         if ($validator->fails()) {

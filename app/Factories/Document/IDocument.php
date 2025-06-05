@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Factories\Document;
 
-interface IDocument {
+interface IDocument
+{
     public function process(array $data);
 }

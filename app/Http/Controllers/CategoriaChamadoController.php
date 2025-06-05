@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCategoriaChamadoRequest;
@@ -15,6 +17,7 @@ class CategoriaChamadoController extends Controller
     public function index()
     {
         $categorias = CategoriaChamado::all();
+
         return Inertia::render('Tecnico/Categorias/Index', \compact('categorias'));
     }
 
@@ -40,7 +43,7 @@ class CategoriaChamadoController extends Controller
         $categoriaChamado = CategoriaChamado::findOrFail($id);
 
         $isUpdated = $categoriaChamado->updateOrFail([
-            'name' => $newName
+            'name' => $newName,
         ]);
 
         if (!$isUpdated) {

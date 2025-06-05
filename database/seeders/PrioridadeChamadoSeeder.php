@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\PrioridadeChamado as ModelsPrioridadeChamado;
@@ -14,13 +16,13 @@ class PrioridadeChamadoSeeder extends Seeder
     {
         $prioridadesChamados = [
             [
-                'name' => "Baixa",
+                'name' => 'Baixa',
             ],
             [
-                'name' => "Média",
+                'name' => 'Média',
             ],
             [
-                'name' => "Alta",
+                'name' => 'Alta',
             ],
         ];
 

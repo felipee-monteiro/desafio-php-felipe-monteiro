@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\StatusChamado;
@@ -14,16 +16,16 @@ class StatusChamadoSeeder extends Seeder
     {
         $statusChamados = [
             [
-                'name' => "Aberto",
+                'name' => 'Aberto',
             ],
             [
-                'name' => "Em atendimento",
+                'name' => 'Em atendimento',
             ],
             [
-                'name' => "Resolvido",
+                'name' => 'Resolvido',
             ],
             [
-                'name' => "Fechado",
+                'name' => 'Fechado',
             ],
         ];
 

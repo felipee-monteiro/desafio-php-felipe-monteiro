@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Exports;
 
 use Illuminate\Contracts\View\View;
@@ -11,9 +13,10 @@ class ChamadosExport implements FromView
     {
     }
 
-    public function view(): View {
+    public function view(): View
+    {
         return view('chamados', [
-            'chamados' => $this->chamados['chamados']
+            'chamados' => $this->chamados['chamados'],
         ]);
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests;
 
 use App\Rules\SafeIntengerRule;
@@ -18,12 +20,12 @@ class AlterarStatusChamadoTecnicoRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|list<mixed>|string>
      */
     public function rules(): array
     {
         return [
-            'status_chamados_id' => ['required', 'numeric', new SafeIntengerRule, 'exists:status_chamados,id'],
+            'status_chamados_id' => ['required', 'numeric', new SafeIntengerRule(), 'exists:status_chamados,id'],
         ];
     }
 }

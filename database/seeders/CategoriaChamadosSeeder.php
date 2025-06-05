@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\CategoriaChamado;
@@ -14,13 +16,13 @@ class CategoriaChamadosSeeder extends Seeder
     {
         $chamadoCategories = [
             [
-                'name' => "TI"
+                'name' => 'TI',
             ],
             [
-                'name' => "Manutenção"
+                'name' => 'Manutenção',
             ],
             [
-                'name' => "Suporte RH"
+                'name' => 'Suporte RH',
             ],
         ];
 
