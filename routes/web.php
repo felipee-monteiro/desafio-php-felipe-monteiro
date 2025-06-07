@@ -39,9 +39,7 @@ Route::get('/', static function () {
     return redirect('/login');
 });
 
-// Todas as rotas autenticadas
-Route::middleware(['auth', 'verified'])->group(static function (): void {
-    // Redirecionamento após login baseado no perfil
+Route::middleware(['auth', 'verified', 'can:isActive'])->group(static function (): void {
     Route::get('/dashboard', static function () {
         if (auth()->user()->isTecnico()) {
             return redirect()->route('tecnico.chamados.index');
@@ -87,7 +85,7 @@ Route::middleware(['auth', 'verified'])->group(static function (): void {
     /**
      * Rotas do COLABORADOR.
      */
-    Route::middleware(['can:isColaborador', 'can:isActive'])->group(static function (): void {
+    Route::middleware(['can:isColaborador'])->group(static function (): void {
         Route::resources([
             'chamados' => ChamadoController::class,
         ]);
@@ -97,7 +95,7 @@ Route::middleware(['auth', 'verified'])->group(static function (): void {
     /**
      * Rotas do TÉCNICO.
      */
-    Route::prefix('tecnico')->name('tecnico.')->middleware(['can:isTecnico', 'can:isActive'])->group(static function (): void {
+    Route::prefix('tecnico')->name('tecnico.')->middleware(['can:isTecnico'])->group(static function (): void {
         Route::get('chamados', [ChamadoTecnicoController::class, 'index'])->name('chamados.index');
         Route::get('chamados/{chamado}', [ChamadoTecnicoController::class, 'show'])->name('chamados.show');
         Route::post('chamados/{chamado}/resposta', [ChamadoTecnicoController::class, 'responder'])->name('chamados.responder');
