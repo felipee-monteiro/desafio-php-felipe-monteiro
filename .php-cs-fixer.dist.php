@@ -13,20 +13,20 @@ $ruleSet = Config\RuleSet\Php83::create()->withRules(Config\Rules::fromArray([
             '='  => 'align_single_space_minimal',
         ],
     ],
-    'phpdoc_to_property_type' => false,
+    'phpdoc_to_property_type'     => false,
     'multiline_string_to_heredoc' => false,
     'echo_tag_syntax'             => [
         'format' => 'short',
     ],
-    'full_opening_tag' => true,
+    'full_opening_tag'  => true,
     'strict_comparison' => true,
-    'strict_param' => true,
-    'single_quote' => [
+    'strict_param'      => true,
+    'single_quote'      => [
         'strings_containing_single_quote_chars' => false,
     ],
     'single_trait_insert_per_statement' => true,
-    'final_class'                 => false,
-    'blank_line_before_statement' => [
+    'final_class'                       => false,
+    'blank_line_before_statement'       => [
         'statements' => [
             'break',
             'case',
@@ -53,7 +53,18 @@ $ruleSet = Config\RuleSet\Php83::create()->withRules(Config\Rules::fromArray([
 ]));
 $config = Config\Factory::fromRuleSet($ruleSet);
 
-$config->getFinder()->in(['app', 'config', 'database', 'lang', 'routes', 'tests']);
+$directories = [
+    'app',
+    'config',
+    'database',
+    'lang',
+    'routes',
+    'tests',
+];
+
+$dirs = \array_map(static fn (string $dir) => __DIR__ . "/{$dir}", $directories);
+
+$config->getFinder()->in($dirs);
 $config->setCacheFile(__DIR__ . '/./.build/php-cs-fixer/.php-cs-fixer.cache');
 
 return $config;
