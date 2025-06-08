@@ -5,12 +5,13 @@
         "vscode": {
             "extensions": [
                 "donjayamanne.githistory",
+                "bmewburn.vscode-intelephense-client",
                 "junstyle.php-cs-fixer",
                 "Vue.volar"
             ],
             "settings": {
+                "php-cs-fixer.ignorePHPVersion": true,
                 "[php]": {
-                    "php-cs-fixer.ignorePHPVersion": true,
                     "editor.defaultFormatter": "junstyle.php-cs-fixer"
                 }
             }
