@@ -11,7 +11,7 @@ use App\Rules\SafeIntengerRule;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
 
-class PrioridadeChamadoController extends Controller
+final class PrioridadeChamadoController extends Controller
 {
     /**
      * Display a listing of the resource.

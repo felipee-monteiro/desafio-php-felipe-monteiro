@@ -13,7 +13,7 @@ use App\Models\PrioridadeChamado;
 use App\Models\StatusChamado;
 use Inertia\Inertia;
 
-class ChamadoController extends Controller
+final class ChamadoController extends Controller
 {
     use ShowChamado;
 

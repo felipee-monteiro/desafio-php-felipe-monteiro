@@ -9,7 +9,7 @@ use App\Models\Roles;
 use App\Models\User;
 use Inertia\Inertia;
 
-class UsersTecnicoController extends Controller
+final class UsersTecnicoController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -2,52 +2,17 @@
 
 declare(strict_types=1);
 
-use App\Factories\Document\ConcreteCreator\CsvChamadoCreator;
-use App\Factories\Document\ConcreteCreator\ExcelChamadoCreator;
-use App\Factories\Document\ConcreteCreator\PDFChamadoCreator;
 use App\Http\Controllers\CategoriaChamadoController;
 use App\Http\Controllers\ChamadoController;
 use App\Http\Controllers\PrioridadeChamadoController;
 use App\Http\Controllers\StatusChamadoController;
 use App\Http\Controllers\Tecnico\ChamadoTecnicoController;
 use App\Http\Controllers\UsersTecnicoController;
-use App\Http\Requests\FilterChamadosRequest;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', static function () {
-    return Inertia::render('Welcome', [
-        'canLogin'       => Route::has('login'),
-        'canRegister'    => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion'     => \PHP_VERSION,
-    ]);
-});
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(static function (): void {
-    Route::get('/dashboard', static function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
-});
-
-Route::get('/', static function () {
-    return redirect('/login');
-});
-
-Route::middleware(['auth', 'verified', 'can:isActive'])->group(static function (): void {
-    Route::get('/dashboard', static function () {
-        if (auth()->user()->isTecnico()) {
-            return redirect()->route('tecnico.chamados.index');
-        }
-
-        return redirect()->route('chamados.index');
-    })->name('dashboard');
-
+if (!\function_exists('registerExportRoute')) {
     function registerExportRoute(string $path = '/colaborador/chamados/export'): void
     {
         Route::post($path, static function (FilterChamadosRequest $request) {
@@ -81,6 +46,39 @@ Route::middleware(['auth', 'verified', 'can:isActive'])->group(static function (
             return Inertia::render('FilePreview', $componentProps);
         });
     }
+}
+
+Route::get('/', static function () {
+    return Inertia::render('Welcome', [
+        'canLogin'       => Route::has('login'),
+        'canRegister'    => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion'     => \PHP_VERSION,
+    ]);
+});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(static function (): void {
+    Route::get('/dashboard', static function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+});
+
+Route::get('/', static function () {
+    return redirect('/login');
+});
+
+Route::middleware(['auth', 'verified', 'can:isActive'])->group(static function (): void {
+    Route::get('/dashboard', static function () {
+        if (auth()->user()->isTecnico()) {
+            return redirect()->route('tecnico.chamados.index');
+        }
+
+        return redirect()->route('chamados.index');
+    })->name('dashboard');
 
     /**
      * Rotas do COLABORADOR.

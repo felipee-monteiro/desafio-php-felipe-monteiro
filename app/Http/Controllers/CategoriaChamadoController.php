@@ -9,7 +9,7 @@ use App\Http\Requests\UpdateCategoriaChamadoRequest;
 use App\Models\CategoriaChamado;
 use Inertia\Inertia;
 
-class CategoriaChamadoController extends Controller
+final class CategoriaChamadoController extends Controller
 {
     /**
      * Display a listing of the resource.
