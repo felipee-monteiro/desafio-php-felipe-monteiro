@@ -2,12 +2,16 @@
 
 declare(strict_types=1);
 
+use App\Factories\Document\ConcreteCreator\CsvChamadoCreator;
+use App\Factories\Document\ConcreteCreator\ExcelChamadoCreator;
+use App\Factories\Document\ConcreteCreator\PDFChamadoCreator;
 use App\Http\Controllers\CategoriaChamadoController;
 use App\Http\Controllers\ChamadoController;
 use App\Http\Controllers\PrioridadeChamadoController;
 use App\Http\Controllers\StatusChamadoController;
 use App\Http\Controllers\Tecnico\ChamadoTecnicoController;
 use App\Http\Controllers\UsersTecnicoController;
+use App\Http\Requests\FilterChamadosRequest;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -21,11 +25,11 @@ if (!\function_exists('registerExportRoute')) {
 
             $document = match ($format) {
                 'pdf' => [
-                    'class' => new pdfchamadocreator(),
+                    'class' => new PDFChamadoCreator(),
                     'mime'  => 'application/pdf',
                 ],
                 'excel' => [
-                    'class' => new excelchamadocreator(),
+                    'class' => new ExcelChamadoCreator(),
                     'mime'  => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                 ],
                 'csv' => [
