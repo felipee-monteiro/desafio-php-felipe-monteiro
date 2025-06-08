@@ -1,22 +1,26 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/php
+// For format details, see https://aka.ms/devcontainer.json.
 {
     "name": "PHP",
-    "image": "mcr.microsoft.com/devcontainers/php:1-8.3-bookworm",
-    // "service": "workspace",
-    // "dockerComposeFile": [
-    //     "../laradock/docker-compose.yml",
-    //     "docker-compose.yml"
-    // ],
-    // "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
     "customizations": {
         "vscode": {
-            "extensions": ["donjayamanne.githistory", "junstyle.php-cs-fixer"],
+            "extensions": [
+                "donjayamanne.githistory",
+                "junstyle.php-cs-fixer",
+                "Vue.volar"
+            ],
             "settings": {
                 "[php]": {
+                    "php-cs-fixer.ignorePHPVersion": true,
                     "editor.defaultFormatter": "junstyle.php-cs-fixer"
                 }
             }
         }
-    }
+    },
+    "dockerComposeFile": "../laradock/docker-compose.yml",
+    "remoteUser": "root",
+    "runServices": ["nginx", "postgres"],
+    "service": "workspace",
+    "workspaceFolder": "/var/www",
+    "shutdownAction": "stopCompose",
+    "postCreateCommand": "uname -a"
 }
