@@ -7,7 +7,7 @@
                 <h1 class="text-2xl font-bold text-gray-800">
                     Chamados Técnicos
                 </h1>
-                <div class="flex gap-4">
+                <div class="flex flex-col md:flex-row gap-4">
                     <select
                         v-model="exportData.format"
                         @change="exportChamadosAsFiles"

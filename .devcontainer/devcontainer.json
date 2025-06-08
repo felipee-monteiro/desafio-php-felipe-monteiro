@@ -6,6 +6,7 @@
             "extensions": [
                 "donjayamanne.githistory",
                 "bmewburn.vscode-intelephense-client",
+                "bradlc.vscode-tailwindcss",
                 "junstyle.php-cs-fixer",
                 "Vue.volar"
             ],
@@ -21,6 +22,7 @@
     "remoteUser": "root",
     "runServices": ["nginx", "postgres"],
     "service": "workspace",
+    "forwardPorts": [5173, 4173],
     "workspaceFolder": "/var/www",
     "shutdownAction": "stopCompose",
     "postCreateCommand": "uname -a"
