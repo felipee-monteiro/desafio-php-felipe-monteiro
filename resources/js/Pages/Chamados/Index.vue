@@ -5,7 +5,7 @@
         :data="chamados"
     >
         <template #createButton>
-            <div class="flex gap-4">
+            <div class="w-full md:w-auto mt-4 flex flex-col md:flex-row gap-4">
                 <select
                     v-model="exportData.format"
                     @change="exportChamadosAsFile"
@@ -35,7 +35,7 @@
                 </select>
                 <Link
                     href="/chamados/create"
-                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
+                    class="bg-blue-600 text-center hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
                 >
                     Novo Chamado
                 </Link>

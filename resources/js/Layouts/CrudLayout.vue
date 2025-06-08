@@ -13,7 +13,7 @@ defineProps({
 <template>
     <AppLayout v-bind:title="mainTitle">
         <div class="max-w-5xl mx-auto p-6">
-            <div class="flex justify-between items-center mb-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-6">
                 <h1 class="text-2xl font-bold text-gray-800">
                     {{ mainTitle }}
                 </h1>

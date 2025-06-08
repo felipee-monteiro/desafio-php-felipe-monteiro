@@ -4,10 +4,21 @@
     "customizations": {
         "vscode": {
             "extensions": [
+                // utilities 
                 "donjayamanne.githistory",
+                "aaron-bond.better-comments",
+                "EditorConfig.EditorConfig",
+                
+                // specific php ext
                 "bmewburn.vscode-intelephense-client",
-                "bradlc.vscode-tailwindcss",
+                "xdebug.php-debug",
+                "SanderRonde.phpstan-vscode",
                 "junstyle.php-cs-fixer",
+                
+                // javascript specific
+                "dbaeumer.vscode-eslint",
+                "bradlc.vscode-tailwindcss",
+                "esbenp.prettier-vscode",
                 "Vue.volar"
             ],
             "settings": {
