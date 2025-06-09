@@ -10,6 +10,7 @@ trait ParseTimestamps
 {
     protected function serializeDate(\DateTimeInterface $date)
     {
+        // @phpstan-ignore method.notFound
         $date->setTimezone(new \DateTimeZone('America/Sao_Paulo'));
 
         return $date->format('c');

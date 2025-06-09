@@ -7,7 +7,7 @@ namespace Database\Seeders;
 use App\Models\CategoriaChamado;
 use Illuminate\Database\Seeder;
 
-class CategoriaChamadosSeeder extends Seeder
+final class CategoriaChamadosSeeder extends Seeder
 {
     /**
      * Run the database seeds.

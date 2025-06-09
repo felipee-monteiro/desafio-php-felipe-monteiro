@@ -7,7 +7,7 @@ namespace Database\Seeders;
 use App\Models\StatusChamado;
 use Illuminate\Database\Seeder;
 
-class StatusChamadoSeeder extends Seeder
+final class StatusChamadoSeeder extends Seeder
 {
     /**
      * Run the database seeds.

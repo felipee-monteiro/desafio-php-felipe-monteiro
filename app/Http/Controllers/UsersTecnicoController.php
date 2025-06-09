@@ -29,11 +29,10 @@ final class UsersTecnicoController extends Controller
      */
     public function update(UpdateUsersTecnicoRequest $request, string $id)
     {
-        $data = $request->safe()->only(['role_id', 'is_active']);
-
-        $user = User::findOrFail($id);
-
-        \extract($data);
+        $data      = $request->safe()->only(['role_id', 'is_active']);
+        $user      = User::findOrFail($id);
+        $role_id   = $data['role_id'];
+        $is_active = $data['is_active'];
 
         if (null !== $role_id) {
             $user->role_id = $role_id;

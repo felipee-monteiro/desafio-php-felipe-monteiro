@@ -8,7 +8,7 @@ use App\Models\Chamado;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class ChamadoSeeder extends Seeder
+final class ChamadoSeeder extends Seeder
 {
     public function run(): void
     {

@@ -18,7 +18,10 @@
         "tightenco/ziggy": "^2.0"
     },
     "require-dev": {
+        "ergebnis/php-cs-fixer-config": "^6.46",
         "fakerphp/faker": "^1.23",
+        "friendsofphp/php-cs-fixer": "^3.75",
+        "larastan/larastan": "^3.0",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.43",

@@ -33,11 +33,7 @@ return new class() extends Migration {
     public function down(): void
     {
         Schema::table('users', static function (Blueprint $table): void {
-            $table->dropIfExists([
-                'two_factor_secret',
-                'two_factor_recovery_codes',
-                'two_factor_confirmed_at',
-            ]);
+            $table->dropIfExists();
         });
     }
 };

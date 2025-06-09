@@ -7,7 +7,7 @@ namespace Database\Seeders;
 use App\Models\PrioridadeChamado as ModelsPrioridadeChamado;
 use Illuminate\Database\Seeder;
 
-class PrioridadeChamadoSeeder extends Seeder
+final class PrioridadeChamadoSeeder extends Seeder
 {
     /**
      * Run the database seeds.

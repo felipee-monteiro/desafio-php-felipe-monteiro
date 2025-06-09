@@ -4,17 +4,17 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                // utilities 
+                // utilities
                 "donjayamanne.githistory",
                 "aaron-bond.better-comments",
                 "EditorConfig.EditorConfig",
-                
+
                 // php specific
                 "bmewburn.vscode-intelephense-client",
                 "xdebug.php-debug",
                 "SanderRonde.phpstan-vscode",
                 "junstyle.php-cs-fixer",
-                
+
                 // javascript specific
                 "dbaeumer.vscode-eslint",
                 "bradlc.vscode-tailwindcss",
@@ -26,6 +26,9 @@
                 "php-cs-fixer.ignorePHPVersion": true,
                 "[php]": {
                     "editor.defaultFormatter": "junstyle.php-cs-fixer"
+                },
+                "files.associations": {
+                    "neon.dist": "yaml"
                 }
             }
         }
@@ -37,5 +40,5 @@
     "forwardPorts": [5173, 4173],
     "workspaceFolder": "/var/www",
     "shutdownAction": "stopCompose",
-    "postCreateCommand": "uname -a"
+    "postCreateCommand": "composer require --dev friendsofphp/php-cs-fixer && composer require --dev ergebnis/php-cs-fixer-config"
 }
