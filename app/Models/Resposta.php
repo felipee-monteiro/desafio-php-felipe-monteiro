@@ -6,6 +6,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Resposta extends Model
+final class Resposta extends Model
 {
 }

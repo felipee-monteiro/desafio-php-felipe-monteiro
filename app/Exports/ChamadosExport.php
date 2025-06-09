@@ -7,9 +7,9 @@ namespace App\Exports;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 
-class ChamadosExport implements FromView
+final class ChamadosExport implements FromView
 {
-    public function __construct(protected $chamados)
+    public function __construct(protected array $chamados)
     {
     }
 

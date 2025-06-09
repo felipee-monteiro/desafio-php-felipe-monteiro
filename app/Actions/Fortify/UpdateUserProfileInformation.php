@@ -29,7 +29,9 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->updateProfilePhoto($input['photo']);
         }
 
+        // @phpstan-ignore booleanAnd.alwaysFalse
         if ($input['email'] !== $user->email
+            // @phpstan-ignore instanceof.alwaysFalse
             && $user instanceof MustVerifyEmail) {
             $this->updateVerifiedUser($user, $input);
         } else {

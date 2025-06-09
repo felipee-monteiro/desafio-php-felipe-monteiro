@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Chamado extends Model
+final class Chamado extends Model
 {
     use ParseTimestamps;
     protected $fillable = [

@@ -28,7 +28,7 @@
                     "editor.defaultFormatter": "junstyle.php-cs-fixer"
                 },
                 "files.associations": {
-                    "neon.dist": "yaml"
+                    "*.neon.dist": "yaml"
                 }
             }
         }

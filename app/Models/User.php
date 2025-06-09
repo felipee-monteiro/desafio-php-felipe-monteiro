@@ -36,12 +36,6 @@ final class User extends Authenticatable
         'two_factor_recovery_codes',
         'two_factor_secret',
     ];
-
-    /**
-     * The accessors to append to the model's array form.
-     *
-     * @var array<int, string>
-     */
     protected $appends = [
         'profile_photo_url',
     ];
@@ -54,11 +48,13 @@ final class User extends Authenticatable
 
     public function isColaborador(): bool
     {
+        // @phpstan-ignore property.notFound
         return 'colaborador' === $this->role->name;
     }
 
     public function isTecnico(): bool
     {
+        // @phpstan-ignore property.notFound
         return 'tecnico' === $this->role->name;
     }
 

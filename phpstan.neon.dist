@@ -1,16 +1,10 @@
 includes:
     - vendor/larastan/larastan/extension.neon
     - vendor/nesbot/carbon/extension.neon
-
 parameters:
     paths:
         - app/
         - database/
         - config/
         - routes/
-    # Level 10 is the highest level
     level: 5
-
-#    ignoreErrors:
-#        - '#PHPDoc tag @var#'
-#
