@@ -9,7 +9,7 @@
                 "aaron-bond.better-comments",
                 "EditorConfig.EditorConfig",
                 
-                // specific php ext
+                // php specific
                 "bmewburn.vscode-intelephense-client",
                 "xdebug.php-debug",
                 "SanderRonde.phpstan-vscode",
@@ -19,7 +19,8 @@
                 "dbaeumer.vscode-eslint",
                 "bradlc.vscode-tailwindcss",
                 "esbenp.prettier-vscode",
-                "Vue.volar"
+                "Vue.volar",
+                "ms-playwright.playwright"
             ],
             "settings": {
                 "php-cs-fixer.ignorePHPVersion": true,
