@@ -56,6 +56,8 @@ export async function login({ page, login, password, shouldClickOnLoginButton = 
 
     if (rememberMe) {
         await rememberMeField.check();
+    } else {
+        await page.uncheck(`input[data-testid="${FIELDS_TESTIDS.rememberMe}"]`);
     }
 
     if (shouldClickOnLoginButton) {

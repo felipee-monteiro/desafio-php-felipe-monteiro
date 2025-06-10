@@ -3,7 +3,7 @@
     "type": "module",
     "scripts": {
         "build": "vite build",
-        "test:e2e": "playwright test --ui-port=3000 --ui-host=0.0.0.0 --project=chromium",
+        "test:e2e": "playwright test --ui-port=3000 --ui-host=0.0.0.0 --project=chromium --workers 1",
         "dev": "vite"
     },
     "devDependencies": {
@@ -19,6 +19,7 @@
         "concurrently": "^9.0.1",
         "cypress": "^14.4.1",
         "laravel-vite-plugin": "^1.2.0",
+        "playwright-havoc": "^1.0.1",
         "postcss": "^8.4.32",
         "tailwindcss": "^3.4.0",
         "vite": "^6.2.4",

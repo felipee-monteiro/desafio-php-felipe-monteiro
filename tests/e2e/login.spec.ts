@@ -2,8 +2,8 @@ import { expect, test } from '@playwright/test';
 import { FIELDS_TESTIDS, getLoginFields, login } from "./utils";
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('/');
-    expect(page).toHaveURL("/login");
+    await page.goto('/', { timeout: 10000 });
+    await expect(page).toHaveURL("/login", { timeout: 10000 });
 });
 
 test.describe("Login as colaborador", function () {
@@ -37,31 +37,22 @@ test.describe("Login as colaborador", function () {
         });
 
         await expect(page).toHaveURL('/login');
-        await expect(page.getByTestId(`${FIELDS_TESTIDS.login}-error`)).toBeVisible();
+        await expect(page.getByTestId(`${FIELDS_TESTIDS.login}-error`)).toBeVisible({ timeout: 10000 });
     });
 
-    test('should not allow me to login when the email is invalid', async ({ page }) => {
+    test('should not allow me to login with invalid emails', async ({ page }) => {
         const invalidEmails = [
             'test',
             'test@',
             'test@a',
             'test@mail.',
         ];
-
-        invalidEmails.forEach(async function (mail) {
-            await login({
-                page,
-                login: mail,
-                shouldClickOnLoginButton: false,
-                password: 'colaborador#engeselt',
-            });
-
+        for (const email of invalidEmails) {
+            await login({ page, login: email, shouldClickOnLoginButton: false, password: '...' });
             const { loginButton } = getLoginFields(page);
-
             await loginButton.click();
-
-            await expect(page).toHaveURL('/login')
-        });
+            await expect(page).toHaveURL('/login');
+        }
     });
 });
 
