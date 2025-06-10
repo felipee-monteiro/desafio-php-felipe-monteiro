@@ -47,6 +47,7 @@ const submit = () => {
             <div>
                 <InputLabel for="email" :value="PT_BR_LABELS['email']" />
                 <TextInput
+                    data-testid="email"
                     id="email"
                     v-model="form.email"
                     type="email"
@@ -61,6 +62,7 @@ const submit = () => {
             <div class="mt-4">
                 <InputLabel for="password" :value="PT_BR_LABELS['Password']" />
                 <TextInput
+                    data-testid="password"
                     id="password"
                     v-model="form.password"
                     type="password"
@@ -73,7 +75,11 @@ const submit = () => {
 
             <div class="block mt-4">
                 <label class="flex items-center">
-                    <Checkbox v-model:checked="form.remember" name="remember" />
+                    <Checkbox
+                        v-model:checked="form.remember"
+                        data-testid="rememberMe"
+                        name="remember"
+                    />
                     <span class="ms-2 text-sm text-gray-600">
                         {{ PT_BR_LABELS["remember_me"] }}
                     </span>
