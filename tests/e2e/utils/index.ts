@@ -3,33 +3,37 @@ import type { Locator, Page } from "@playwright/test";
 type Login = {
     login: string;
     password: string;
-    rememberMe: boolean;
+    rememberMe?: boolean;
+    shouldClickOnLoginButton?: boolean;
     page: Page;
 };
 
 type LoginFields = {
     loginField: Locator,
     passwordField: Locator,
-    rememberMeField: Locator
+    rememberMeField: Locator,
+    loginButton: Locator,
 };
 
-const FIELDS_TESTIDS = {
+export const FIELDS_TESTIDS = {
     login: "email",
     password: "password",
-    rememberMe: "rememberMe"
+    rememberMe: "rememberMe",
+    loginButton: "loginButton"
 };
 
-async function getLoginFields(page: Page): Promise<LoginFields> {
+export function getLoginFields(page: Page): LoginFields {
     return {
         loginField: page.getByTestId(FIELDS_TESTIDS.login),
         passwordField: page.getByTestId(FIELDS_TESTIDS.password),
-        rememberMeField: page.getByTestId(FIELDS_TESTIDS.rememberMe)
+        rememberMeField: page.getByTestId(FIELDS_TESTIDS.rememberMe),
+        loginButton: page.getByTestId(FIELDS_TESTIDS.loginButton)
     };
 }
 
 export function isValidString(v: string | string[]): boolean {
     if (Array.isArray(v)) {
-        return v.some(function (value: string) {
+        return v.every(function (value: string) {
             return isValidString(value);
         });
     }
@@ -37,8 +41,8 @@ export function isValidString(v: string | string[]): boolean {
     return typeof v === "string" && v.trim().length > 0;
 }
 
-export async function login({ page, login, password, rememberMe }: Readonly<Login>): Promise<void> {
-    const { loginField, passwordField, rememberMeField } = await getLoginFields(page);
+export async function login({ page, login, password, shouldClickOnLoginButton = true, rememberMe = false }: Readonly<Login>): Promise<void> {
+    const { loginField, passwordField, rememberMeField, loginButton } = getLoginFields(page);
 
     if (!isValidString([
         login,
@@ -52,7 +56,9 @@ export async function login({ page, login, password, rememberMe }: Readonly<Logi
 
     if (rememberMe) {
         await rememberMeField.check();
-    } else {
-        await rememberMeField.clear();
+    }
+
+    if (shouldClickOnLoginButton) {
+        await loginButton.click();
     }
 }

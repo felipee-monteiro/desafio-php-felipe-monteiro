@@ -56,7 +56,11 @@ const submit = () => {
                     autofocus
                     autocomplete="username"
                 />
-                <InputError class="mt-2" :message="form.errors.email" />
+                <InputError
+                    data-testid="email-error"
+                    class="mt-2"
+                    :message="form.errors.email"
+                />
             </div>
 
             <div class="mt-4">
@@ -70,7 +74,11 @@ const submit = () => {
                     required
                     autocomplete="current-password"
                 />
-                <InputError class="mt-2" :message="form.errors.password" />
+                <InputError
+                    data-testid="password-error"
+                    class="mt-2"
+                    :message="form.errors.password"
+                />
             </div>
 
             <div class="block mt-4">
@@ -97,6 +105,7 @@ const submit = () => {
 
                 <PrimaryButton
                     class="ms-4"
+                    data-testid="loginButton"
                     :class="{ 'opacity-25': form.processing }"
                     :disabled="form.processing"
                 >
