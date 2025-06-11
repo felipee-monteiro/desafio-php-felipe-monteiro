@@ -42,9 +42,9 @@ export function getFieldsByKind({ kind, page }: {
             return {
                 type: "resetPassword",
                 fields: {
-                    resetPasswordLink: page.getByTestId(""),
-                    resetPasswordEmailField: page.getByTestId(""),
-                    resetPasswordButton: page.getByTestId(""),
+                    resetPasswordLink: page.getByTestId("resetPasswordLink"),
+                    resetPasswordEmailField: page.getByTestId("resetPasswordEmailField"),
+                    resetPasswordButton: page.getByTestId("resetPasswordButton"),
                 }
             };
         default:
@@ -78,6 +78,13 @@ export async function login({ page, login, password, shouldClickOnLoginButton = 
     if (shouldClickOnLoginButton) {
         await loginButton.click();
     }
+}
+
+export async function solicitateToRedefinePassword({ page, email }: { page: Page, email: string }): Promise<void> {
+    const { resetPasswordEmailField, resetPasswordButton } = getFieldsByKind({ kind: 'resetPassword', page }).fields;
+
+    await resetPasswordEmailField.fill(email);
+    await resetPasswordButton.click();
 }
 
 export function generateRandomEmail(): string {

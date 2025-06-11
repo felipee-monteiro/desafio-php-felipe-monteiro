@@ -1,14 +1,23 @@
 import test from "./fixtures";
-import { FIELDS_TESTIDS, login } from "./utils";
+import { FIELDS_TESTIDS, generateRandomEmail, login } from "./utils";
 
-const { describe, beforeEach, expect } = test;
-
-beforeEach(async ({ page }) => {
-    await page.goto('/', { timeout: 50000 });
-    await expect(page).toHaveURL("/login", { timeout: 50000 });
-});
+const { describe, beforeEach, expect, afterEach } = test;
 
 describe("Login as colaborador", function () {
+    beforeEach(async ({ page }) => {
+        await page.goto('/', { timeout: 50000 });
+        await expect(page).toHaveURL("/login", { timeout: 50000 });
+    });
+
+    // afterEach(async ({ page, loginFields, baseURL }) => {
+    //     const { loginField, passwordField } = loginFields.fields;
+
+    //     if (page.url() === `${baseURL}/login`) {
+    //         await expect(loginField).toBeEmpty();
+    //         await expect(passwordField).toBeEmpty();
+    //     }
+    // });
+
     test('should allow me to login as a colaborador', async ({ page }) => {
         await login({
             page,
@@ -23,7 +32,7 @@ describe("Login as colaborador", function () {
     test('should not allow me to login when the email is incorrect', async ({ page }) => {
         await login({
             page,
-            login: 'colaborador@mai.com',
+            login: generateRandomEmail(),
             password: 'colaborador#engeselt',
         });
 

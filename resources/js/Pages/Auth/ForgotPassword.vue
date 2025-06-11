@@ -45,17 +45,23 @@ const submit = () => {
                     id="email"
                     v-model="form.email"
                     type="email"
+                    data-testid="resetPasswordEmailField"
                     class="mt-1 block w-full"
                     required
                     autofocus
                     autocomplete="username"
                 />
-                <InputError class="mt-2" :message="form.errors.email" />
+                <InputError
+                    data-testid="resetPasswordEmailField-error"
+                    class="mt-2"
+                    :message="form.errors.email"
+                />
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 <PrimaryButton
                     :class="{ 'opacity-25': form.processing }"
+                    data-testid="resetPasswordButton"
                     :disabled="form.processing"
                 >
                     {{ PT_BR_LABELS["email_password_reset_link"] }}

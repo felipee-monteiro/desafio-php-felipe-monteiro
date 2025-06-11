@@ -40,6 +40,7 @@ const submit = () => {
                 <InputLabel for="email" :value="PT_BR_LABELS['email']" />
                 <TextInput
                     id="email"
+                    data-testid="resetPasswordEmailField"
                     v-model="form.email"
                     type="email"
                     class="mt-1 block w-full"
@@ -86,6 +87,7 @@ const submit = () => {
                 <PrimaryButton
                     :class="{ 'opacity-25': form.processing }"
                     :disabled="form.processing"
+                    data-testid="resetPasswordButton"
                 >
                     {{ PT_BR_LABELS["reset_password"] }}
                 </PrimaryButton>

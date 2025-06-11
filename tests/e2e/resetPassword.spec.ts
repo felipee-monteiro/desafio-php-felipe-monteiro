@@ -1,12 +1,22 @@
-import { expect, test } from '@playwright/test';
+import test from './fixtures';
+import { generateRandomEmail, solicitateToRedefinePassword } from './utils';
 
-test.beforeEach(async ({ page }) => {
-    await page.goto('/', { timeout: 10000 });
-    await expect(page).toHaveURL("/login", { timeout: 10000 });
-    await page.getByTestId('resetPassLink').click();
-    await expect(page).toHaveURL('forgot-password');
-});
+const { describe, beforeEach, expect } = test;
 
-test.describe("Reset Password Flow", function () {
+describe("Reset Password Flow", function () {
+    beforeEach(async ({ page }) => {
+        await page.goto('/', { timeout: 10000 });
+        await expect(page).toHaveURL("login", { timeout: 10000 });
+        await page.getByTestId('resetPassLink').click();
+        await expect(page).toHaveURL('forgot-password');
+    });
 
+    test('should not allow me to recover password with invalid emails', async function ({ page }) {
+        await solicitateToRedefinePassword({
+            email: generateRandomEmail(),
+            page
+        });
+
+        await expect(page.getByTestId("resetPasswordEmailField-error")).toBeVisible();
+    });
 });
