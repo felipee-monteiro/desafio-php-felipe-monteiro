@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class BrowserSessionsTest extends TestCase
+final class BrowserSessionsTest extends TestCase
 {
     use RefreshDatabase;
 

@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;
 use Tests\TestCase;
 
-class DeleteApiTokenTest extends TestCase
+final class DeleteApiTokenTest extends TestCase
 {
     use RefreshDatabase;
 

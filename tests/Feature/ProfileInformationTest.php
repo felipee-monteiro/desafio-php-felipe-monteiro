@@ -8,7 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ProfileInformationTest extends TestCase
+final class ProfileInformationTest extends TestCase
 {
     use RefreshDatabase;
 

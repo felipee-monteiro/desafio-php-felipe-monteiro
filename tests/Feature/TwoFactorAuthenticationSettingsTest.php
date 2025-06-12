@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Fortify\Features;
 use Tests\TestCase;
 
-class TwoFactorAuthenticationSettingsTest extends TestCase
+final class TwoFactorAuthenticationSettingsTest extends TestCase
 {
     use RefreshDatabase;
 

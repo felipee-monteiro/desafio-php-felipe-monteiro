@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Jetstream\Features;
 use Tests\TestCase;
 
-class CreateApiTokenTest extends TestCase
+final class CreateApiTokenTest extends TestCase
 {
     use RefreshDatabase;
 

@@ -18,9 +18,9 @@ export const FIELDS_TESTIDS = {
 
 export type FieldsTestIdsKinds = "login" | "resetPassword" | "createChamado";
 
-export interface FieldsTest {
+export interface FieldsTest<T extends string> {
     type: FieldsTestIdsKinds;
-    fields: Record<string, Locator>;
+    fields: Record<T, Locator>;
 }
 
 export const invalidEmails = ["", " ", "test", "test@", "test@a", "test@mail."];
