@@ -10,7 +10,7 @@
 
             <div>
                 <div class="flex justify-between items-center mb-6">
-                    <h1 class="text-2xl font-bold text-gray-800">
+                    <h1 class="text-2xl font-bold text-gray-800" :data-testid="`${chamado.titulo}-title`">
                         Chamado #{{ chamado.id }}
                     </h1>
                 </div>

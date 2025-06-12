@@ -12,6 +12,7 @@
                     >
                     <input
                         v-model="form.titulo"
+                        data-testid="chamadoTitleField"
                         class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                     />
@@ -25,6 +26,7 @@
                     <textarea
                         v-model="form.descricao"
                         rows="4"
+                        data-testid="chamadoDescriptionField"
                         class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
                     />
@@ -38,6 +40,7 @@
                         >
                         <select
                             v-model="form.categoria_chamado_id"
+                            data-testid="createChamadoCategoria"
                             class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         >
                             <option
@@ -56,6 +59,7 @@
                         >
                         <select
                             v-model="form.prioridade_chamado_id"
+                            data-testid="createChamadoPrioridade"
                             class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                         >
                             <option
@@ -76,6 +80,7 @@
                     <input
                         type="file"
                         @change="handleFile"
+                        data-testid="createChamadoAnexo"
                         class="w-full border rounded px-3 py-2"
                     />
                 </div>
@@ -83,6 +88,7 @@
                 <div class="flex justify-end">
                     <button
                         type="submit"
+                        data-testid="createChamadoButton"
                         class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded shadow"
                     >
                         Salvar Chamado

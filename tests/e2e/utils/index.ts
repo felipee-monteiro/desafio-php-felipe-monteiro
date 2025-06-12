@@ -16,7 +16,7 @@ export const FIELDS_TESTIDS = {
     loginButton: "loginButton",
 };
 
-export type FieldsTestIdsKinds = "login" | "resetPassword";
+export type FieldsTestIdsKinds = "login" | "resetPassword" | "createChamado";
 
 export interface FieldsTest {
     type: FieldsTestIdsKinds;
@@ -53,6 +53,27 @@ export function getFieldsByKind({
                     ),
                     resetPasswordButton: page.getByTestId(
                         "resetPasswordButton",
+                    ),
+                },
+            };
+        case "createChamado":
+            return {
+                type: "createChamado",
+                fields: {
+                    createChamadoTitleField:
+                        page.getByTestId("chamadoTitleField"),
+                    createChamadoDescriptionField: page.getByTestId(
+                        "chamadoDescriptionField",
+                    ),
+                    createChamadoPrioridade: page.getByTestId(
+                        "createChamadoPrioridade",
+                    ),
+                    createChamadoCategoria: page.getByTestId(
+                        "createChamadoCategoria",
+                    ),
+                    createChamadoAnexo: page.getByTestId("createChamadoAnexo"),
+                    createChamadoButton: page.getByTestId(
+                        "createChamadoButton",
                     ),
                 },
             };
@@ -122,4 +143,46 @@ export function generateRandomPassword(): string {
     return faker.internet.password({
         length: 8,
     });
+}
+
+export function generateRandomTitle(): string {
+    return faker.internet.displayName();
+}
+
+export async function createChamado({
+    categoria,
+    description,
+    page,
+    prioridade,
+    title,
+    anexo,
+    shouldClickOnSendButton = true,
+}: {
+    page: Page;
+    title: string;
+    description: string;
+    categoria: string;
+    prioridade: string;
+    anexo?: string;
+    shouldClickOnSendButton?: boolean;
+}): Promise<void> {
+    const {
+        createChamadoTitleField,
+        createChamadoDescriptionField,
+        createChamadoCategoria,
+        createChamadoButton,
+        createChamadoPrioridade,
+    } = getFieldsByKind({
+        kind: "createChamado",
+        page,
+    }).fields;
+
+    await createChamadoTitleField.fill(title);
+    await createChamadoDescriptionField.fill(description);
+    await createChamadoCategoria.selectOption(categoria);
+    await createChamadoPrioridade.selectOption(prioridade);
+
+    if (shouldClickOnSendButton) {
+        await createChamadoButton.click();
+    }
 }

@@ -35,6 +35,7 @@
                 </select>
                 <Link
                     href="/chamados/create"
+                    data-testid="createNewChamado"
                     class="bg-blue-600 text-center hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
                 >
                     Novo Chamado
@@ -42,7 +43,10 @@
             </div>
         </template>
         <template #default="{ data }">
-            <div class="flex justify-between items-center">
+            <div
+                class="flex justify-between items-center"
+                :data-testid="data.titulo"
+            >
                 <div>
                     <h2 class="text-lg font-semibold text-gray-800">
                         {{ data.titulo }}
@@ -60,6 +64,7 @@
                 </div>
                 <Link
                     :href="`/chamados/${data.id}`"
+                    :data-testid="`${data.titulo}-chamadoDetails`"
                     class="text-sm text-blue-600 hover:underline"
                     >Visualizar</Link
                 >
@@ -110,7 +115,7 @@ function exportChamadosAsFile() {
                 onSuccess: function () {
                     window.history.back();
                 },
-            }
+            },
         );
     }
 }
