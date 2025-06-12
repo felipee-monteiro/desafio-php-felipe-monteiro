@@ -155,7 +155,6 @@ export async function createChamado({
     page,
     prioridade,
     title,
-    anexo,
     shouldClickOnSendButton = true,
 }: {
     page: Page;

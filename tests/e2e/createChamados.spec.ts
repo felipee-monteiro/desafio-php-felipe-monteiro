@@ -16,10 +16,10 @@ describe("Create a Chamado", () => {
 
         await expect(page).toHaveURL("chamados");
 
-        page.getByTestId("createNewChamado").click();
+        await page.getByTestId("createNewChamado").click();
     });
 
-    test("should be able to me create a chamado", async ({ page }) => {
+    test("should allow me to create a chamado", async ({ page }) => {
         const title = generateRandomTitle();
 
         await createChamado({
@@ -36,5 +36,44 @@ describe("Create a Chamado", () => {
         await page.getByTestId(`${title}-chamadoDetails`).click();
 
         await expect(page.getByTestId(`${title}-title`)).toBeVisible();
+    });
+
+    test("should not allow me to create the same chamado twice", async ({
+        page,
+    }) => {
+        const title = "testee";
+
+        for (let i = 0; i < 2; i++) {
+            await createChamado({
+                categoria: "2",
+                prioridade: "2",
+                description: "teste",
+                page,
+                title,
+            });
+
+            if (i == 1) {
+                await expect(page).toHaveURL("chamados/create");
+            } else {
+                await page.getByTestId("createNewChamado").click();
+            }
+        }
+    });
+
+    test("should not allow me to create a chamado without required fields", async ({
+        page,
+    }) => {
+        const invalidData = ["", " "];
+
+        for (const data of invalidData) {
+            await createChamado({
+                categoria: "2",
+                prioridade: "2",
+                page,
+                title: data,
+                description: data,
+            });
+            await expect(page).toHaveURL("chamados/create");
+        }
     });
 });
