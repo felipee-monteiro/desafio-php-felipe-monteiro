@@ -38,10 +38,7 @@ final class AccessRolesTest extends TestCase
             ['chamados/create'],
             ['chamados/1'],
             ['chamados'],
-            ['tecnico/chamados'],
-            ['tecnico/chamados/1'],
-            ['tecnico/chamados/status/manage'],
-            ['tecnico/chamados/prioridades/manage'],
+            ...self::tecnicoURISGetProvider(),
         ];
     }
 
