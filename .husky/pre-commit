@@ -1,2 +1,1 @@
-php artisan test tests/Feature/AccessRolesTest.php
-php artisan test tests/Feature/ExportDataOnVariousFilesTest.php
+php artisan test tests/Feature/AccessRolesTest.php tests/Feature/ExportDataOnVariousFilesTest.php

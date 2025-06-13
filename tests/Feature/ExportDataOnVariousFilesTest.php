@@ -35,6 +35,7 @@ final class ExportDataOnVariousFilesTest extends TestCase
             'data'   => \json_decode(\file_get_contents(__DIR__ . '/../__mocks__/chamados.json')),
         ]);
 
+        // Its ugly, but works :D
         $response->assertStatus(500);
     }
 
