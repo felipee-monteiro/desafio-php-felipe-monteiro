@@ -1,0 +1,1913 @@
+[
+    {
+        "id": 75,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:08:57",
+        "updated_at": "12/06/2025 10:08:57",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 74,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:08:56",
+        "updated_at": "12/06/2025 10:08:56",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 73,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:08:08",
+        "updated_at": "12/06/2025 10:08:08",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 72,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:08:07",
+        "updated_at": "12/06/2025 10:08:07",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 71,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:07:27",
+        "updated_at": "12/06/2025 10:07:27",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 70,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:07:27",
+        "updated_at": "12/06/2025 10:07:27",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 69,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:07:26",
+        "updated_at": "12/06/2025 10:07:26",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 67,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:04:07",
+        "updated_at": "12/06/2025 10:04:07",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 68,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:04:07",
+        "updated_at": "12/06/2025 10:04:07",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 66,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:04:06",
+        "updated_at": "12/06/2025 10:04:06",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 65,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:00:56",
+        "updated_at": "12/06/2025 10:00:56",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 64,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:00:56",
+        "updated_at": "12/06/2025 10:00:56",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 63,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 10:00:56",
+        "updated_at": "12/06/2025 10:00:56",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 61,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:58:04",
+        "updated_at": "12/06/2025 09:58:04",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 62,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:58:04",
+        "updated_at": "12/06/2025 09:58:04",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 60,
+        "user_id": 1,
+        "titulo": "Lora.Bogan57",
+        "descricao": "Cooper78",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:58:01",
+        "updated_at": "12/06/2025 09:58:01",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 58,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:56:30",
+        "updated_at": "12/06/2025 09:56:30",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 59,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:56:30",
+        "updated_at": "12/06/2025 09:56:30",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 57,
+        "user_id": 1,
+        "titulo": "Delphine_Hyatt54",
+        "descricao": "Modesto.Auer",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:56:28",
+        "updated_at": "12/06/2025 09:56:28",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 56,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:55:43",
+        "updated_at": "12/06/2025 09:55:43",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 55,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:55:43",
+        "updated_at": "12/06/2025 09:55:43",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 54,
+        "user_id": 1,
+        "titulo": "Jarrod.Hayes30",
+        "descricao": "Malcolm_Hayes",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:55:41",
+        "updated_at": "12/06/2025 09:55:41",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 53,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:49:58",
+        "updated_at": "12/06/2025 09:49:58",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 52,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:49:57",
+        "updated_at": "12/06/2025 09:49:57",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 51,
+        "user_id": 1,
+        "titulo": "Yvonne.Rempel17",
+        "descricao": "Margarete23",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:49:55",
+        "updated_at": "12/06/2025 09:49:55",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 50,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "sadsadad",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:49:09",
+        "updated_at": "12/06/2025 09:49:09",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 1,
+            "name": "TI",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 49,
+        "user_id": 1,
+        "titulo": "testee",
+        "descricao": "teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "12/06/2025 09:46:05",
+        "updated_at": "12/06/2025 09:46:05",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 16,
+        "user_id": 1,
+        "titulo": "Yasmeen_Tillman93",
+        "descricao": "Adolph_Hoppe19",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "11/06/2025 21:18:54",
+        "updated_at": "11/06/2025 21:18:54",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 15,
+        "user_id": 1,
+        "titulo": "teste",
+        "descricao": "Teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "11/06/2025 21:15:45",
+        "updated_at": "11/06/2025 21:15:45",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 14,
+        "user_id": 1,
+        "titulo": "Testeeee",
+        "descricao": "dsadadad",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "11/06/2025 21:03:05",
+        "updated_at": "11/06/2025 21:03:05",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 1,
+            "name": "TI",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 13,
+        "user_id": 1,
+        "titulo": "teste",
+        "descricao": "Teste",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "11/06/2025 21:01:48",
+        "updated_at": "11/06/2025 21:01:48",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 2,
+            "name": "Manutenção",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 12,
+        "user_id": 1,
+        "titulo": "dasdad",
+        "descricao": "asdada",
+        "status_chamados_id": 1,
+        "anexo": "anexos/SASiWdM4aF1YGF5orDg98JfHSpO8lOcu7T7xHXPZ",
+        "created_at": "08/06/2025 18:04:17",
+        "updated_at": "08/06/2025 18:04:17",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 1,
+            "name": "TI",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 11,
+        "user_id": 1,
+        "titulo": "Teste code injection",
+        "descricao": "dasdsda",
+        "status_chamados_id": 1,
+        "anexo": "anexos/HtGR863BuN4My00FS5elvvtKVA0V9IeInnHrAeEn",
+        "created_at": "08/06/2025 18:03:13",
+        "updated_at": "08/06/2025 18:03:13",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 1,
+            "name": "TI",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 10,
+        "user_id": 1,
+        "titulo": "dsadasd",
+        "descricao": "asadasdsada",
+        "status_chamados_id": 1,
+        "anexo": "anexos/pQ425PwIRfneXEMh6VGXtSf9nLtdAh7vGzxMMU78.pdf",
+        "created_at": "02/06/2025 14:17:40",
+        "updated_at": "02/06/2025 14:17:40",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 1,
+            "name": "TI",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 9,
+        "user_id": 1,
+        "titulo": "Teste de titulo",
+        "descricao": "teste de decrição",
+        "status_chamados_id": 2,
+        "anexo": null,
+        "created_at": "02/06/2025 14:16:30",
+        "updated_at": "08/06/2025 18:18:53",
+        "prioridade_chamado_id": 5,
+        "categoria": {
+            "id": 3,
+            "name": "Suporte RH",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 2,
+            "name": "Em atendimento",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 5,
+            "name": "Teste de atualização",
+            "created_at": "27/05/2025 17:39:39",
+            "updated_at": "27/05/2025 17:41:27"
+        }
+    },
+    {
+        "id": 3,
+        "user_id": 1,
+        "titulo": "Erro no sistema de ponto",
+        "descricao": "Sistema de registro de ponto não está funcionando.",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "27/05/2025 16:53:12",
+        "updated_at": "27/05/2025 16:53:12",
+        "prioridade_chamado_id": 3,
+        "categoria": {
+            "id": 1,
+            "name": "TI",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 3,
+            "name": "Alta",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 4,
+        "user_id": 1,
+        "titulo": "Solicitação de cadeira ergonômica",
+        "descricao": "Solicitação de troca por cadeira ergonômica.",
+        "status_chamados_id": 2,
+        "anexo": null,
+        "created_at": "27/05/2025 16:53:12",
+        "updated_at": "07/06/2025 15:27:00",
+        "prioridade_chamado_id": 1,
+        "categoria": {
+            "id": 3,
+            "name": "Suporte RH",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 2,
+            "name": "Em atendimento",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 1,
+            "name": "Baixa",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 5,
+        "user_id": 1,
+        "titulo": "Impressora com atolamento",
+        "descricao": "Impressora da recepção está com papel atolado.",
+        "status_chamados_id": 4,
+        "anexo": null,
+        "created_at": "27/05/2025 16:53:12",
+        "updated_at": "27/05/2025 20:32:52",
+        "prioridade_chamado_id": 2,
+        "categoria": {
+            "id": 1,
+            "name": "TI",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 4,
+            "name": "Fechado",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 2,
+            "name": "Média",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    },
+    {
+        "id": 1,
+        "user_id": 1,
+        "titulo": "Problema com internet",
+        "descricao": "Sem acesso à internet no setor de TI.",
+        "status_chamados_id": 1,
+        "anexo": null,
+        "created_at": "27/05/2025 16:53:12",
+        "updated_at": "27/05/2025 16:53:12",
+        "prioridade_chamado_id": 3,
+        "categoria": {
+            "id": 1,
+            "name": "TI",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "responsavel": {
+            "id": 1,
+            "name": "Colaborador",
+            "email": "colaborador@mail.com",
+            "email_verified_at": null,
+            "current_team_id": null,
+            "profile_photo_path": null,
+            "is_active": true,
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "02/06/2025 14:28:01",
+            "two_factor_confirmed_at": null,
+            "role_id": 1,
+            "profile_photo_url": "https://ui-avatars.com/api/?name=C&color=7F9CF5&background=EBF4FF",
+            "role": {
+                "id": 1,
+                "name": "colaborador",
+                "created_at": "2025-05-27T19:53:11.000000Z",
+                "updated_at": "2025-05-27T19:53:11.000000Z"
+            }
+        },
+        "status": {
+            "id": 1,
+            "name": "Aberto",
+            "created_at": "27/05/2025 16:53:11",
+            "updated_at": "27/05/2025 16:53:11"
+        },
+        "prioridade": {
+            "id": 3,
+            "name": "Alta",
+            "created_at": "27/05/2025 16:53:12",
+            "updated_at": "27/05/2025 16:53:12"
+        }
+    }
+]

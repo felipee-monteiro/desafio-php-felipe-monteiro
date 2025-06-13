@@ -35,9 +35,7 @@ final class AccessRolesTest extends TestCase
     public static function allGetRoutesProvider(): array
     {
         return [
-            ['chamados/create'],
-            ['chamados/1'],
-            ['chamados'],
+            ...self::colaboratorURISGetProvider(),
             ...self::tecnicoURISGetProvider(),
         ];
     }
