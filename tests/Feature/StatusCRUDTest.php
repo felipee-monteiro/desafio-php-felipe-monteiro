@@ -25,8 +25,8 @@ final class StatusCRUDTest extends TestCase
     {
         return [
             [[
-                'route'  => 'status/manage',
-                'method' => 'post',
+                'route'  => 'status/manage/create',
+                'method' => 'get',
             ]],
             [[
                 'route'  => 'status/manage',
@@ -47,8 +47,7 @@ final class StatusCRUDTest extends TestCase
     public function testExample(string $route): void
     {
         $user = User::factory()->create([
-            'role_id'   => 2,
-            'is_active' => true,
+            'role_id' => 2,
         ]);
         $response = $this->actingAs($user)->get($this->routePrefix . "/{$route}");
 

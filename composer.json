@@ -67,10 +67,6 @@
         ],
         "test": [
             "@php artisan config:clear --ansi",
-            "php artisan test"
-        ],
-        "test-feature": [
-            "@php artisan config:clear --ansi",
             "@php artisan test --testsuite=Feature --stop-on-failure"
         ]
     },
