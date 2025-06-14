@@ -43,10 +43,7 @@ final class AccessRolesTest extends TestCase
     #[DataProvider('colaboratorURISGetProvider')]
     public function testShouldBeAbleToAccessColaboradorArea(string $uri): void
     {
-        $user = User::factory()->create([
-            'role_id'   => 1,
-            'is_active' => true,
-        ]);
+        $user = User::factory()->create();
 
         $response = $this->actingAs($user)->get($uri);
 
@@ -82,10 +79,7 @@ final class AccessRolesTest extends TestCase
     #[DataProvider('tecnicoURISGetProvider')]
     public function testShouldNotBeAbleToAccessTecnicoArea(string $uri): void
     {
-        $user = User::factory()->create([
-            'role_id'   => 1,
-            'is_active' => true,
-        ]);
+        $user = User::factory()->create();
 
         $response = $this->actingAs($user)->get($uri);
 

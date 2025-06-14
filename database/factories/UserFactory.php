@@ -36,6 +36,8 @@ final class UserFactory extends Factory
             'two_factor_secret'         => null,
             'two_factor_recovery_codes' => null,
             'remember_token'            => Str::random(10),
+            'role_id'                   => 1,
+            'is_active'                 => true,
             'profile_photo_path'        => null,
             'current_team_id'           => null,
         ];

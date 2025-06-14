@@ -60,10 +60,7 @@ final class StatusCRUDTest extends TestCase
     {
         \extract($routeMetadata);
 
-        $user = User::factory()->create([
-            'role_id'   => 1,
-            'is_active' => true,
-        ]);
+        $user = User::factory()->create();
 
         $response = $this->actingAs($user)->{$method}($this->routePrefix . "/{$route}");
 
