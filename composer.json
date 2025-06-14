@@ -67,7 +67,7 @@
         ],
         "test": [
             "@php artisan config:clear --ansi",
-            "php artisan test tests/Feature/AccessRolesTest.php tests/Feature/ExportDataOnVariousFilesTest.php tests/Feature/StatusCRUDTest.php"
+            "php artisan test"
         ],
         "test-feature": [
             "@php artisan config:clear --ansi",
