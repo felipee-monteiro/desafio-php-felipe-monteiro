@@ -40,9 +40,15 @@ final class PrioridadeChamadoController extends Controller
      */
     public function update(UpdatePrioridadeChamadoRequest $request, string $id)
     {
+        $data = Validator::make([
+            'id' => $id,
+        ], [
+            'id' => ['numeric', 'required', new SafeIntengerRule(), 'exists:prioridade_chamados,id'],
+        ])->validate();
+
         $updateData = $request->safe()->only('name');
 
-        PrioridadeChamado::findOrFail($id)->update($updateData);
+        PrioridadeChamado::findOrFail($data['id'])->update($updateData);
 
         return back()->with('success', 'Prioridade atualizada com sucesso.');
     }
@@ -53,7 +59,7 @@ final class PrioridadeChamadoController extends Controller
     public function destroy(string $id)
     {
         $statusID = Validator::make(['id' => $id], [
-            'id' => ['numeric', 'required', new SafeIntengerRule(), 'exists:prioridade_chamados,id'],
+            'id' => ['required', 'numeric', new SafeIntengerRule(), 'exists:prioridade_chamados,id'],
         ])->validate();
 
         $isDeleted = PrioridadeChamado::findOrFail($statusID['id'])->delete();

@@ -36,7 +36,7 @@ final class ExportDataOnVariousFilesTest extends TestCase
         ]);
 
         // Its ugly, but works :D
-        $response->assertStatus(500);
+        $response->assertInternalServerError();
     }
 
     #[DataProvider('AllowedFileTypesProvider')]
