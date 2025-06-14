@@ -44,7 +44,7 @@ final class StatusCRUDTest extends TestCase
     }
 
     #[DataProvider('getRoutesProvider')]
-    public function testExample(string $route): void
+    public function testShouldAllowMeToAccess(string $route): void
     {
         $user = User::factory()->create([
             'role_id' => 2,

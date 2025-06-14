@@ -90,7 +90,6 @@ final class AccessRolesTest extends TestCase
     public function testShouldNotBeAbleToAccessAllAplicationAreasAsColaborator(string $uri): void
     {
         $user = User::factory()->create([
-            'role_id'   => 1,
             'is_active' => false,
         ]);
 
