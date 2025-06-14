@@ -1,4 +1,1 @@
-php artisan test \
-    tests/Feature/AccessRolesTest.php \
-    tests/Feature/ExportDataOnVariousFilesTest.php \
-    tests/Feature/StatusCRUDTest.php
+composer test
