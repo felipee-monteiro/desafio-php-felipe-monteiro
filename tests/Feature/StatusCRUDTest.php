@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\DataProvider;
 use Tests\TestCase;
 
 final class StatusCRUDTest extends TestCase
 {
+    use RefreshDatabase;
     public string $routePrefix = 'tecnico/chamados';
 
     public static function getRoutesProvider(): array
