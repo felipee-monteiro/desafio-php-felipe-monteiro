@@ -166,8 +166,6 @@ final class StatusCRUDTest extends TestCase
                 'name' => 'invalid',
             ]);
 
-            // $response->dd();
-
             $response->assertSessionHasErrors();
         }
     }
