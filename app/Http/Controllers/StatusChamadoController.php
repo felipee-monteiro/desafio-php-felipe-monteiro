@@ -40,9 +40,15 @@ final class StatusChamadoController extends Controller
      */
     public function update(UpdateStatusChamadoRequest $request, string $id)
     {
+        $data = Validator::make([
+            'id' => $id,
+        ], [
+            'id' => ['numeric', new SafeIntengerRule(), 'exists:chamados,id'],
+        ])->validate();
+
         $updateData = $request->safe()->only('name');
 
-        StatusChamado::findOrFail($id)->update($updateData);
+        StatusChamado::findOrFail($data['id'])->update($updateData);
 
         return back()->with('success', 'Status atualizado com sucesso.');
     }
