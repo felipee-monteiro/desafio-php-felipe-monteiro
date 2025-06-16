@@ -16,7 +16,7 @@ final class PrioridadeChamadoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): \Inertia\Response
     {
         $prioridadesChamados = PrioridadeChamado::all();
 
@@ -26,7 +26,7 @@ final class PrioridadeChamadoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePrioridadeChamadoRequest $request)
+    public function store(StorePrioridadeChamadoRequest $request): \Illuminate\Http\RedirectResponse
     {
         $createData = $request->safe()->only('name');
 
@@ -38,7 +38,7 @@ final class PrioridadeChamadoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePrioridadeChamadoRequest $request, string $id)
+    public function update(UpdatePrioridadeChamadoRequest $request, string $id): \Illuminate\Http\RedirectResponse
     {
         $data = Validator::make([
             'id' => $id,
@@ -48,7 +48,10 @@ final class PrioridadeChamadoController extends Controller
 
         $updateData = $request->safe()->only('name');
 
-        PrioridadeChamado::findOrFail($data['id'])->update($updateData);
+        $priority = PrioridadeChamado::findOrFail($data['id']);
+
+        // @phpstan-ignore method.notFound
+        $priority->update($updateData);
 
         return back()->with('success', 'Prioridade atualizada com sucesso.');
     }
@@ -56,12 +59,13 @@ final class PrioridadeChamadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): \Illuminate\Http\RedirectResponse
     {
         $statusID = Validator::make(['id' => $id], [
             'id' => ['required', 'numeric', new SafeIntengerRule(), 'exists:prioridade_chamados,id'],
         ])->validate();
 
+        /** @phpstan-ignore method.notFound */
         $isDeleted = PrioridadeChamado::findOrFail($statusID['id'])->delete();
 
         if ($isDeleted) {

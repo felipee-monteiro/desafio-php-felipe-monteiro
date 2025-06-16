@@ -49,13 +49,11 @@ final class User extends Authenticatable
 
     public function isColaborador(): bool
     {
-        // @phpstan-ignore property.notFound
         return 'colaborador' === $this->role->name;
     }
 
     public function isTecnico(): bool
     {
-        // @phpstan-ignore property.notFound
         return 'tecnico' === $this->role->name;
     }
 
@@ -64,16 +62,31 @@ final class User extends Authenticatable
         return $this->isTecnico() || $this->isColaborador();
     }
 
+    /**
+     * Respostas feitas pelo usu rio.
+     *
+     * @return HasMany<Resposta, $this>
+     */
     public function respostas(): HasMany
     {
         return $this->hasMany(Resposta::class);
     }
 
+    /**
+     * Chamados abertos pelo usu rio.
+     *
+     * @return HasMany<Chamado, $this>
+     */
     public function chamados(): HasMany
     {
         return $this->hasMany(Chamado::class, 'user_id');
     }
 
+    /**
+     * Rela o entre o usu rio e o seu role.
+     *
+     * @return HasOne<Roles, $this>
+     */
     public function role(): HasOne
     {
         return $this->hasOne(Roles::class, 'id', 'role_id');

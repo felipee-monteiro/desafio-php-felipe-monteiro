@@ -14,7 +14,7 @@ final class CategoriaChamadoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): \Inertia\Response
     {
         $categorias = CategoriaChamado::all();
 
@@ -24,7 +24,7 @@ final class CategoriaChamadoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCategoriaChamadoRequest $request)
+    public function store(StoreCategoriaChamadoRequest $request): \Illuminate\Http\RedirectResponse
     {
         $data = $request->safe()->only(['name']);
 
@@ -36,7 +36,7 @@ final class CategoriaChamadoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategoriaChamadoRequest $request, string $id)
+    public function update(UpdateCategoriaChamadoRequest $request, string $id): \Illuminate\Http\RedirectResponse
     {
         $newName = $request->validated('newName');
 
@@ -56,7 +56,7 @@ final class CategoriaChamadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): \Illuminate\Http\RedirectResponse
     {
         $categoriaChamado = CategoriaChamado::findOrFail($id);
 

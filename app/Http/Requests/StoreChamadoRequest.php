@@ -29,11 +29,16 @@ class StoreChamadoRequest extends FormRequest
             'descricao'             => 'required',
             'status_chamados_id'    => ['required', 'numeric', new SafeIntengerRule(), 'exists:status_chamados,id'],
             'categoria_chamado_id'  => ['required', 'numeric', new SafeIntengerRule(), 'exists:categoria_chamados,id'],
-            'prioridade_chamado_id' => 'required|numeric|exists:prioridade_chamados,id',
+            'prioridade_chamado_id' => ['required', 'numeric', new SafeIntengerRule(), 'exists:prioridades_chaamdos,id'],
             'anexo'                 => 'nullable|file|max:2048',
         ];
     }
 
+    /**
+     * Return custom attribute names for validator errors.
+     *
+     * @return array<string, string>
+     */
     public function attributes(): array
     {
         return [

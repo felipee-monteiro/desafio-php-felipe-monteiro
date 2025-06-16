@@ -10,7 +10,12 @@ use Maatwebsite\Excel\Facades\Excel;
 
 final class CsvChamados implements IDocument
 {
-    public function process(array $data)
+    /**
+     * Processa os dados para gerar um arquivo CSV.
+     *
+     * @phpstan-ignore missingType.iterableValue
+     */
+    public function process(array $data): string
     {
         $chamadosExport = new chamadosexport($data);
 

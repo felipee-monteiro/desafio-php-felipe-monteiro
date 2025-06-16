@@ -17,7 +17,7 @@ final class ChamadoController extends Controller
 {
     use ShowChamado;
 
-    public function index(IndexChamadoRequest $request)
+    public function index(IndexChamadoRequest $request): \Inertia\Response
     {
         $data  = $request->validated();
         $query = Chamado::query();
@@ -39,7 +39,7 @@ final class ChamadoController extends Controller
         return Inertia::render('Chamados/Index', \compact('chamados', 'status', 'prioridades'));
     }
 
-    public function create()
+    public function create(): \Inertia\Response
     {
         $categoriasChamado = CategoriaChamado::all();
         $prioridades       = PrioridadeChamado::all();
@@ -47,11 +47,9 @@ final class ChamadoController extends Controller
         return Inertia::render('Chamados/Create', \compact('categoriasChamado', 'prioridades'));
     }
 
-    public function store(StoreChamadoRequest $request)
+    public function store(StoreChamadoRequest $request): \Illuminate\Http\RedirectResponse
     {
         $data = $request->validated();
-
-        // dd($data);
 
         if ($request->hasFile('anexo')) {
             $data['anexo'] = $request->file('anexo')->store('anexos', 'public');

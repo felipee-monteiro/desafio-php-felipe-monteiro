@@ -24,6 +24,7 @@
             ],
             "settings": {
                 "php-cs-fixer.ignorePHPVersion": true,
+                "phpstan.singleFileMode": true,
                 "[php]": {
                     "editor.defaultFormatter": "junstyle.php-cs-fixer"
                 },

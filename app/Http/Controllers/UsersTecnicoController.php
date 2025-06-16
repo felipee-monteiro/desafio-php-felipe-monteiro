@@ -14,7 +14,7 @@ final class UsersTecnicoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): \Inertia\Response
     {
         $data = [
             'users' => User::whereNot('id', auth()->user()->id)->get(),
@@ -27,7 +27,7 @@ final class UsersTecnicoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateUsersTecnicoRequest $request, string $id)
+    public function update(UpdateUsersTecnicoRequest $request, string $id): \Illuminate\Http\RedirectResponse
     {
         $data      = $request->safe()->only(['role_id', 'is_active']);
         $user      = User::findOrFail($id);

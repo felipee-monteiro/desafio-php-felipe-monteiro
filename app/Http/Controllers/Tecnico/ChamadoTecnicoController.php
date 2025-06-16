@@ -18,7 +18,7 @@ class ChamadoTecnicoController extends Controller
 {
     use ShowChamado;
 
-    public function index(IndexChamadoTecnicoRequest $request)
+    public function index(IndexChamadoTecnicoRequest $request): \Inertia\Response
     {
         $query = Chamado::query();
 
@@ -41,7 +41,7 @@ class ChamadoTecnicoController extends Controller
         return Inertia::render('Tecnico/Chamados/Index', \compact('chamados', 'status', 'prioridades'));
     }
 
-    public function responder(ResponderChamadoTecnicoRequest $request, Chamado $chamado)
+    public function responder(ResponderChamadoTecnicoRequest $request, Chamado $chamado): \Illuminate\Http\RedirectResponse
     {
         $mensagem = $request->safe()->only('mensagem');
 
@@ -53,7 +53,7 @@ class ChamadoTecnicoController extends Controller
         return back()->with('success', 'Resposta enviada.');
     }
 
-    public function alterarStatus(AlterarStatusChamadoTecnicoRequest $request, Chamado $chamado)
+    public function alterarStatus(AlterarStatusChamadoTecnicoRequest $request, Chamado $chamado): \Illuminate\Http\RedirectResponse
     {
         $status = $request->input('status_chamados_id');
 

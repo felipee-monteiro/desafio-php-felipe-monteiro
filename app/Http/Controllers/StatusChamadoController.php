@@ -16,7 +16,7 @@ final class StatusChamadoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): \Inertia\Response
     {
         $status = StatusChamado::all();
 
@@ -26,7 +26,7 @@ final class StatusChamadoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreStatusChamadoRequest $request)
+    public function store(StoreStatusChamadoRequest $request): \Illuminate\Http\RedirectResponse
     {
         $createData = $request->safe()->only('name');
 
@@ -38,7 +38,7 @@ final class StatusChamadoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateStatusChamadoRequest $request, string $id)
+    public function update(UpdateStatusChamadoRequest $request, string $id): \Illuminate\Http\RedirectResponse
     {
         $data = Validator::make([
             'id' => $id,
@@ -48,6 +48,7 @@ final class StatusChamadoController extends Controller
 
         $updateData = $request->safe()->only('name');
 
+        // @phpstan-ignore method.notFound
         StatusChamado::findOrFail($data['id'])->update($updateData);
 
         return back()->with('success', 'Status atualizado com sucesso.');
@@ -56,12 +57,13 @@ final class StatusChamadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $id): \Illuminate\Http\RedirectResponse
     {
         $statusID = Validator::make(['id' => $id], [
             'id' => ['numeric', 'required', new SafeIntengerRule(), 'exists:status_chamados,id'],
         ])->validate();
 
+        /** @phpstan-ignore method.notFound */
         $isDeleted = StatusChamado::findOrFail($statusID['id'])->delete();
 
         if ($isDeleted) {

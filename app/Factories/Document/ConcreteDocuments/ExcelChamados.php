@@ -10,7 +10,12 @@ use Maatwebsite\Excel\Facades\Excel;
 
 final class ExcelChamados implements IDocument
 {
-    public function process(array $data)
+    /**
+     * Processa os dados para gerar um arquivo Excel.
+     *
+     * @phpstan-ignore missingType.iterableValue
+     */
+    public function process(array $data): string
     {
         $chamadosExport = new chamadosexport($data);
 
