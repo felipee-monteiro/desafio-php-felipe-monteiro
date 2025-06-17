@@ -54,8 +54,7 @@ final class AccessRolesTest extends TestCase
     public function testShouldBeAbleToAccessTecnicoArea(string $uri): void
     {
         $user = User::factory()->create([
-            'role_id'   => 2,
-            'is_active' => true,
+            'role_id' => 2,
         ]);
 
         $response = $this->actingAs($user)->get($uri);
@@ -67,8 +66,7 @@ final class AccessRolesTest extends TestCase
     public function testShouldNotBeAbleToAccessColaboratorArea(string $uri): void
     {
         $user = User::factory()->create([
-            'role_id'   => 2,
-            'is_active' => true,
+            'role_id' => 2,
         ]);
 
         $response = $this->actingAs($user)->get($uri);

@@ -12,7 +12,7 @@ use Inertia\Inertia;
 
 trait ShowChamado
 {
-    public function show(string $chamadoId)
+    public function show(string $chamadoId): \Inertia\Response
     {
         $validator = Validator::make(['chamado_id' => $chamadoId], [
             'chamado_id' => ['required', 'numeric', new SafeIntengerRule(), 'exists:chamados,id'],
