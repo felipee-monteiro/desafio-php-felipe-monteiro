@@ -24,6 +24,7 @@
             ],
             "settings": {
                 "php-cs-fixer.ignorePHPVersion": true,
+                "intelephense.environment.phpVersion": "8.4",
                 "phpstan.singleFileMode": true,
                 "[php]": {
                     "editor.defaultFormatter": "junstyle.php-cs-fixer"
