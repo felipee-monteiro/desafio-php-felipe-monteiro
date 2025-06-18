@@ -6,7 +6,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 
-class SafeIntengerRule implements ValidationRule
+final class SafeIntengerRule implements ValidationRule
 {
     /**
      * Run the validation rule.

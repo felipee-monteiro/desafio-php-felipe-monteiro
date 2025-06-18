@@ -26,17 +26,15 @@ final class ExportDataOnVariousFilesTest extends TestCase
     public function testShouldAllowMeToExportData(string $format): void
     {
         $user = User::factory()->create([
-            'is_active' => true,
-            'role_id'   => 2,
+            'role_id' => 2,
         ]);
 
         $response = $this->actingAs($user)->post('tecnico/chamados/export', [
             'format' => $format,
-            'data'   => \json_decode(\file_get_contents(__DIR__ . '/../__mocks__/chamados.json')),
+            'data'   => \json_decode(\file_get_contents(__DIR__ . '/../__mocks__/chamados.json') ?: ''),
         ]);
 
-        // Its ugly, but works :D
-        $response->assertInternalServerError();
+        $response->assertSessionHasNoErrors();
     }
 
     #[DataProvider('AllowedFileTypesProvider')]

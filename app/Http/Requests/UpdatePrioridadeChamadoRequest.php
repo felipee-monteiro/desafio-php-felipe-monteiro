@@ -6,7 +6,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePrioridadeChamadoRequest extends FormRequest
+final class UpdatePrioridadeChamadoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -7,7 +7,7 @@ namespace App\Http\Requests;
 use App\Rules\SafeIntengerRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class FilterChamadosRequest extends FormRequest
+final class FilterChamadosRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,18 +24,20 @@ class FilterChamadosRequest extends FormRequest
      */
     public function rules(): array
     {
+        $crudFieldNameArrayRule = 'required';
+
         return [
-            'format' => 'required|string|in:pdf,excel,csv',
-            // 'data' => 'required|array:id,created_at,updated_at,titulo,descricao,categoria,prioridade,status',
-            // 'data.*.id' => ['required', 'numeric', new SafeIntengerRule, 'exists:chamados,id'],
-            // 'data.*.titulo' => 'required|string|exists:chamados,titulo',
-            // 'data.*.descricao' => 'required|string|exists:chamados,descricao',
-            // 'data.*.categoria' => 'array:name',
-            // 'data.*.prioridade' => 'array:name',
-            // 'data.*.status' => 'array:name',
-            // 'data.*.categoria.name' => 'required|string|exists:categoria_chamados,name',
-            // 'data.*.status.name' => 'required|string|exists:status_chamados,name',
-            // 'data.*.prioridade.name' => 'required|string|exists:prioridade_chamados,name',
+            'format'                 => 'required|string|in:pdf,excel,csv',
+            'data'                   => 'required',
+            'data.*.id'              => ['required', 'numeric', new SafeIntengerRule()],
+            'data.*.titulo'          => 'required|string',
+            'data.*.descricao'       => 'required|string',
+            'data.*.categoria'       => $crudFieldNameArrayRule,
+            'data.*.prioridade'      => $crudFieldNameArrayRule,
+            'data.*.status'          => $crudFieldNameArrayRule,
+            'data.*.categoria.name'  => 'required|string',
+            'data.*.status.name'     => 'required|string',
+            'data.*.prioridade.name' => 'required|string',
         ];
     }
 }

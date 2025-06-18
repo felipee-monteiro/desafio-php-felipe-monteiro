@@ -7,7 +7,7 @@ namespace App\Http\Requests;
 use App\Rules\SafeIntengerRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreChamadoRequest extends FormRequest
+final class StoreChamadoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
