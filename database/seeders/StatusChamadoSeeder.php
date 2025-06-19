@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Database\Seeders;
 
 use App\Models\StatusChamado;
+use App\Status;
 use Illuminate\Database\Seeder;
 
 final class StatusChamadoSeeder extends Seeder
@@ -14,20 +15,7 @@ final class StatusChamadoSeeder extends Seeder
      */
     public function run(): void
     {
-        $statusChamados = [
-            [
-                'name' => 'Aberto',
-            ],
-            [
-                'name' => 'Em atendimento',
-            ],
-            [
-                'name' => 'Resolvido',
-            ],
-            [
-                'name' => 'Fechado',
-            ],
-        ];
+        $statusChamados = \array_map(static fn ($case) => ['name' => $case->value], Status::cases());
 
         foreach ($statusChamados as $statusChamado) {
             StatusChamado::create($statusChamado);
