@@ -6,6 +6,7 @@ namespace App;
 
 enum Category: string
 {
-    case Fruits = 'fruits';
-    case People = 'people';
+    case TI         = 'TI';
+    case MANUTENCAO = 'Manutenção';
+    case SUPORTE_RH = 'Suporte RH';
 }
