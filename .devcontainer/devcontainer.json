@@ -14,6 +14,7 @@
                 "xdebug.php-debug",
                 "SanderRonde.phpstan-vscode",
                 "junstyle.php-cs-fixer",
+                "laravel.vscode-laravel",
 
                 // javascript specific
                 "dbaeumer.vscode-eslint",
