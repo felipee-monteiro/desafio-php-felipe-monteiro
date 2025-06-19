@@ -7,3 +7,6 @@ parameters:
         - database/
         - routes/
     level: 7
+    excludePaths:
+        - app/Composables/
+        - app/Exports/
