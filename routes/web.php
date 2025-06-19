@@ -95,7 +95,7 @@ Route::middleware(['auth', 'verified', 'can:isActive'])->group(static function (
 
         registerExportRoute('/chamados/export');
 
-        Route::resource('chamados/status/manage', StatusChamadoController::class)->parameters('manage', 'status');
+        Route::resource('chamados/status/manage', StatusChamadoController::class)->parameter('manage', 'status');
 
         Route::resource('chamados/prioridades/manage', PrioridadeChamadoController::class)->parameter('manage', 'priority');
 
