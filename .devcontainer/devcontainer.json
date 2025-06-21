@@ -5,7 +5,6 @@
         "vscode": {
             "extensions": [
                 // utilities
-                "donjayamanne.githistory",
                 "aaron-bond.better-comments",
                 "EditorConfig.EditorConfig",
 
@@ -20,8 +19,7 @@
                 "dbaeumer.vscode-eslint",
                 "bradlc.vscode-tailwindcss",
                 "esbenp.prettier-vscode",
-                "Vue.volar",
-                "ms-playwright.playwright"
+                "Vue.volar"
             ],
             "settings": {
                 "php-cs-fixer.ignorePHPVersion": true,

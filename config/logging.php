@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
@@ -63,6 +64,11 @@ return [
             'path'                 => storage_path('logs/laravel.log'),
             'level'                => env('LOG_LEVEL', 'debug'),
             'replace_placeholders' => true,
+            'formatter'            => LineFormatter::class,
+            'formatter_with'       => [
+                'dateFormat'         => 'd/m/Y H:i:s',
+                'includeStacktraces' => env('APP_ENV', 'production') === 'local',
+            ],
         ],
 
         'daily' => [
