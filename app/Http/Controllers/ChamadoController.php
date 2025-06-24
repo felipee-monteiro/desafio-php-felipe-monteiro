@@ -22,12 +22,12 @@ final class ChamadoController extends Controller
         $data  = $request->validated();
         $query = Chamado::query();
 
-        if (!empty($data)) {
-            if (null !== $data['status']) {
+        if (filled($data)) {
+            if ($request->filled('status')) {
                 $query->where('status_chamados_id', $data['status']);
             }
 
-            if (null !== $data['prioridade']) {
+            if ($request->filled('prioridade')) {
                 $query->where('prioridade_chamado_id', $data['prioridade']);
             }
         }
