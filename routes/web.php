@@ -51,6 +51,10 @@ if (!\function_exists('registerExportRoute')) {
     }
 }
 
+Route::get("/nova-funcionalidade", function() {
+   return ["nova funcionalidade"]; 
+});
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
