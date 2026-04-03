@@ -21,7 +21,7 @@
         "cypress": "^14.4.1",
         "husky": "^9.1.7",
         "laravel-vite-plugin": "^1.2.0",
-        "lodash-es": "^4.17.23",
+        "lodash-es": "^4.18.1",
         "playwright-havoc": "^1.0.1",
         "postcss": "^8.4.32",
         "prettier": "^3.5.3",
